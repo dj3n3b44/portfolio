@@ -306,6 +306,7 @@ section {
 @media (max-width: 600px) {
   body {
     padding: 20px;
+    overflow-x: hidden; /* FIX PRINCIPAL: Empêche le défilement horizontal */
   }
   .avatar-container {
     flex-direction: column;
@@ -318,17 +319,17 @@ section {
   
   /* --- FIX BOUTON CV (Retiré du positionnement absolu pour le mobile) --- */
   #avatar-section {
-    position: static; /* Annule le positionnement relatif pour le mobile */
+    position: static; 
   }
 
   #cv-button {
-    position: static; /* Le bouton revient dans le flux normal de la page */
-    display: block; /* Prend toute la largeur disponible */
-    width: 80%; /* Pour qu'il ne soit pas trop large */
-    margin: 15px auto 0 auto; /* Centrage et marge au-dessus */
+    position: static; 
+    display: block; 
+    width: 90%; /* Ajusté à 90% pour être plus sûr et centré */
+    margin: 15px auto 0 auto; 
     font-size: 14px;
     padding: 10px;
-    top: initial; /* Réinitialisation des positions inutiles */
+    top: initial; 
     right: initial;
   }
   /* --- FIN FIX BOUTON CV --- */
@@ -342,7 +343,7 @@ section {
   nav button, .lang-buttons button {
     font-size: 14px;
     padding: 8px 16px;
-    flex-grow: 1; /* Permet aux boutons de navigation de s'étirer */
+    flex-grow: 1; 
   }
   h2 {
     font-size: 20px;
@@ -355,7 +356,7 @@ section {
   }
   .project {
     max-width: 100%;
-    flex: 1 1 100%; /* Force l'empilement pleine largeur */
+    flex: 1 1 100%; 
   }
   .skill-item {
     width: 80px;
