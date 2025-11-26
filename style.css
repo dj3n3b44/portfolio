@@ -1,0 +1,406 @@
+*, *::before, *::after {
+  box-sizing: border-box; /* Ajouté pour garantir que le padding et la bordure sont inclus dans la largeur/hauteur de l'élément */
+}
+
+:root {
+  --bg: #0a0d14;
+  --text: #dce2f0;
+  --accent: #4ea8de;
+  --highlight: #9fcdff;
+}
+
+
+/* === Base === */
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'Courier New', monospace;
+  margin: 0;
+  padding: 40px;
+  line-height: 1.6;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h1, h2, h3 {
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 24px;
+  margin-top: 40px;
+}
+h3 {
+  font-size: 20px;
+}
+p, li {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+a {
+  color: var(--highlight);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* === Language Selector === */
+.lang-select {
+  font-family: 'Courier New', monospace;
+  color: var(--text);
+  background-color: transparent;
+  text-align: center;
+  margin-top: 100px;
+}
+.lang-title {
+  font-size: 20px;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+}
+.lang-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.lang-buttons button {
+  background-color: transparent;
+  color: var(--text);
+  border: 2px solid var(--text);
+  padding: 12px 24px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+.lang-buttons button:hover {
+  background-color: var(--text);
+  color: var(--bg);
+  box-shadow: 0 0 10px var(--text);
+}
+
+/* === Terminal animation === */
+#terminal-init {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'Courier New', monospace;
+  padding: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  box-sizing: border-box;
+  z-index: 9999;
+  overflow-y: auto;
+}
+#terminal-text {
+  font-size: 16px;
+  white-space: pre-wrap;
+  text-align: left;
+}
+
+/* === Avatar Section === */
+#avatar-section {
+  margin: 40px 0;
+  padding: 20px;
+  background-color: #111;
+  border: 2px solid var(--text);
+  border-radius: 10px;
+  position: relative; /* nécessaire pour placer le bouton CV dedans */
+}
+.avatar-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
+}
+.avatar-container img {
+  width: 180px;
+  height: auto;
+  border-radius: 8px;
+  border: 2px solid var(--accent);
+}
+.avatar-text h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+.avatar-text p {
+  font-size: 16px;
+  color: var(--text);
+  max-width: 600px;
+}
+
+/* Bouton CV */
+#cv-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: transparent;
+  color: var(--text);
+  border: 2px solid var(--text);
+  padding: 8px 14px;
+  font-family: 'Courier New', monospace;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  z-index: 10;
+}
+#cv-button:hover {
+  background-color: var(--text);
+  color: var(--bg);
+  box-shadow: 0 0 10px var(--text);
+  font-weight: bold;
+}
+
+/* === Navigation Buttons === */
+nav {
+  margin: 30px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+nav button {
+  background: #111;
+  color: var(--text);
+  border: 2px solid var(--text);
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: inherit; /* Utiliser la police du body */
+}
+nav button:hover {
+  background-color: #222;
+}
+
+/* === Sections === */
+section {
+  margin-bottom: 40px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #111;
+}
+.hidden {
+  display: none;
+}
+
+/* === Project Row === */
+.project-row {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* === Project Blocks === */
+.project {
+  flex: 1 1 300px;
+  max-width: 400px;
+  background-color: #111;
+  border: 2px solid var(--text);
+  border-radius: 8px;
+  padding: 15px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.project:hover {
+  background-color: #222;
+  transform: scale(1.03);
+  box-shadow: 0 0 10px var(--accent);
+}
+.project:hover h3 {
+  color: var(--highlight);
+}
+.project:hover img {
+  border-color: var(--highlight);
+}
+.project img {
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+.project h3 {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+.project p {
+  font-size: 16px;
+}
+.project a {
+  margin-top: 10px;
+  font-size: 14px;
+  color: var(--highlight);
+}
+
+/* === Skills Logos === */
+.skills-logos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100px;
+  text-align: center;
+}
+.skill-item img {
+  width: 50px;
+  height: auto;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  border: 1px solid var(--accent);
+  border-color: #222;
+}
+.skill-item span {
+  font-size: 14px;
+  color: var(--text);
+}
+
+/* === Contact Form === */
+#contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 500px;
+  margin-top: 20px;
+}
+#contact-form input,
+#contact-form textarea {
+  background-color: #111;
+  color: var(--text);
+  border: 1px solid var(--text);
+  padding: 10px;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+}
+#contact-form button {
+  background-color: transparent;
+  color: var(--text);
+  border: 2px solid var(--text);
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+#contact-form button:hover {
+  background-color: var(--text);
+  color: var(--bg);
+  box-shadow: 0 0 10px var(--text);
+}  
+
+/* === Responsive pour mobile === */
+@media (max-width: 600px) {
+  body {
+    padding: 20px;
+  }
+  .avatar-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .avatar-container img {
+    width: 120px;
+  }
+  .avatar-text h2 {
+    font-size: 20px;
+  }
+  .avatar-text p {
+    font-size: 14px;
+  }
+  nav button, .lang-buttons button {
+    font-size: 14px;
+    padding: 8px 16px;
+    flex-grow: 1; /* Ajouté pour que les boutons de navigation prennent plus de place */
+  }
+  h2 {
+    font-size: 20px;
+  }
+  h3 {
+    font-size: 18px;
+  }
+  p, li {
+    font-size: 14px;
+  }
+  .project {
+    max-width: 100%;
+    flex: 1 1 100%; /* Ajouté pour forcer l'empilement pleine largeur sur mobile */
+  }
+  .skill-item {
+    width: 80px;
+  }
+  .skill-item img {
+    width: 40px;
+  }
+  #cv-button {
+    font-size: 13px;
+    padding: 6px 10px;
+    top: 5px;
+    right: 5px;
+  }
+}
+
+/* NOUVEAU STYLE POUR LE LIEN DE CHANGEMENT DE LANGUE (plus discret) */
+.lang-switch-link {
+  text-align: right; /* Aligne le lien à droite */
+  margin: 5px 0 15px; /* Marge pour un bon espacement, plus petite */
+}
+
+.lang-switch-link a {
+  display: inline-block;
+  color: var(--text); /* Couleur du texte vert */
+  border: 1px dashed #333; /* Bordure plus fine et discrète */
+  padding: 4px 8px; /* Padding plus petit */
+  font-size: 12px; /* Taille de police plus petite */
+  text-decoration: none; /* Enlève le soulignement du lien */
+  transition: all 0.2s ease;
+  font-family: 'Courier New', monospace;
+  background-color: transparent; /* Pas de fond par défaut */
+  opacity: 0.7; /* Légèrement transparent pour être discret */
+}
+
+.lang-switch-link a:hover {
+  color: var(--highlight); /* Couleur accentuée au survol */
+  border-color: var(--highlight); /* Bordure accentuée au survol */
+  text-decoration: none;
+  background-color: #1a1a1a; /* Léger fond sombre au survol */
+  opacity: 1; /* Pleine opacité au survol */
+  box-shadow: 0 0 3px var(--highlight); /* Petite ombre au survol */
+}
+
+/* === Footer === */
+footer {
+  margin-top: 50px;
+  padding: 20px 0 10px; /* Moins de padding en bas */
+  text-align: center;
+  border-top: 1px dashed #333; /* Séparateur discret */
+  font-size: 14px;
+  color: #888; /* Couleur de texte subtile pour le footer */
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+footer a {
+  color: var(--highlight); /* Utilise votre couleur d'accentuation (violet/magenta) */
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+footer a:hover {
+  text-decoration: underline;
+  color: var(--accent); /* Met en évidence l'accentuation au survol */
+}

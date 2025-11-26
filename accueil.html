@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Portfolio | Djeneba Diallo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="lang-select" class="lang-select">
+    <p class="lang-title">Choisissez votre langue / Choose your language</p>
+    <div class="lang-buttons">
+      <button onclick="startTerminal('fr')">🇫🇷 Français</button>
+      <button onclick="startTerminal('en')">🇬🇧 English</button>
+    </div>
+  </div>
+
+  <div id="terminal-init" class="hidden">
+    <pre id="terminal-text"></pre>
+  </div>
+  
+  <script>
+    let selectedLang = "fr";
+
+    function startTerminal(lang) {
+      selectedLang = lang;
+      document.getElementById("lang-select").style.display = "none";
+      document.getElementById("terminal-init").classList.remove("hidden");
+      typeLine();
+    }
+
+    const lines = {
+      fr: [
+        "Initialisation du système...",
+        "Chargement des modules...",
+        "Connexion à l’interface...",
+        "Portfolio prêt."
+      ],
+      en: [
+        "System initialization...",
+        "Loading modules...",
+        "Connecting to interface...",
+        "Portfolio ready."
+      ]
+    };
+
+    let i = 0;
+    function typeLine() {
+      const terminal = document.getElementById("terminal-text");
+      const currentLines = lines[selectedLang];
+      if (i < currentLines.length) {
+        const line = document.createElement("div");
+        line.textContent = currentLines[i];
+        terminal.appendChild(line);
+        i++;
+        setTimeout(typeLine, 800);
+      } else {
+        setTimeout(() => {
+          // Redirection vers la page FR ou EN dédiée
+          if (selectedLang === "en") {
+            window.location.href = "en.html"; 
+          } else {
+            window.location.href = "fr.html"; 
+          }
+        }, 1000);
+      }
+    }
+  </script>
+
+</body>
+</html>

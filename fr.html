@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Portfolio | Djeneba Diallo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <p class="lang-switch-link" style="text-align: center; margin: 10px 0;">
+    <a href="accueil.html">Change Language / Changer de langue</a>
+  </p>
+
+  <section id="avatar-section">
+    <button id="cv-button" onclick="downloadCV()">📄 Télécharger CV</button>
+    <div class="avatar-container">
+      <img src="docs/images/avatar_.png" alt="Djeneba Diallo Avatar" width="180" height="270">
+      <div class="avatar-text">
+        <h1>Djeneba Diallo</h1>
+        <p>
+          Étudiante en 2ème année de BUT Informatique, spécialisation Gestion et Exploitation des Données. Je recherche un stage de 8 à 12 semaines à partir du 13 avril 2026 afin d'appliquer mes compétences en développement Java et en modélisation SQL.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <nav>
+    <button onclick="showSection('intro')">> À Propos</button>
+    <button onclick="showSection('projets')">> Projets</button>
+    <button onclick="showSection('skills')">> Compétences</button>
+    <button onclick="showSection('contact')">> Contact</button>
+  </nav>
+
+    <section id="intro" class="hidden">
+      <h2>À propos</h2>
+      
+      <h3>📚 Formation & Parcours</h3>
+      <ul>
+        <li>BUT Informatique (2ème année en cours, IUT de Montreuil) - Parcours : Administration, gestion et exploitation des données.</li>
+        <li>Baccalauréat Technologique STI2D (Systèmes d'Information et du Numérique), obtenu avec Mention Très Bien.</li>
+      </ul>
+
+      <h3>💼 Expérience et Certifications</h3>
+      <ul>
+        <li>Certificat PSC1 (Prévention et Secours Civiques de Niveau 1) : Je suis formée aux premiers secours et apte à réagir en cas d'urgence.</li>
+        <li>BAFA (Brevet d'Aptitude aux Fonctions d'Animateur) - Approfondissement : Accueillir des enfants en situation de handicap.</li>
+        <li>Expérience polyvalente en animation : J'ai travaillé comme animatrice de séjours, animatrice scientifique, et animatrice pédagogique (pour des groupes de 6 à 17 ans), encadrant des loisirs, veillant à la sécurité, et gérant l'imprévu.</li>
+      </ul>
+    </section>
+
+  <section id="projets" class="hidden">
+    <h2>Mes Projets</h2>
+    <div class="project-row">
+      <div class="project">
+        <img src="/docs/images/sql_project.png" alt="Capture d'écran Projet SQL" width="370" height="208">
+        <h3>Base de Données (MySQL)</h3>
+        <p>Modélisation MERISE, schéma relationnel, requêtes SQL complexes.</p>
+        <a href="/docs/zip_projet/projet_vente_velo.zip" download>📦 Télécharger Projet</a>
+      </div>
+      <div class="project" onclick="window.open('https://github.com/dj3n3b44/Project_2DGame')">
+        <img src="docs/images/java_game.png" alt="Capture d'écran Jeu Java" width="370" height="208">
+        <h3>Jeu 2D (JavaFX)</h3>
+        <p>Animations, collisions, inventaire, MVC, gestion des événements.</p>
+      </div>
+      <div class="project" onclick="window.open('https://saefinal-8ba1e.firebaseapp.com/', '_blank')">
+        <img src="docs/images/web_project.png" alt="Site Web HTML CSS JS" width="370" height="208">
+        <h3>Site Web (HTML/CSS/JS)</h3>
+        <p>
+          Mini-site interactif sur les Jeux Olympiques : design responsive, sections dynamiques,
+          animations JavaScript, intégration d'informations sportives.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="hidden">
+    <h2>Compétences Techniques</h2>
+    
+    <h3>👩🏾‍💻 Langages</h3>
+    <div class="skills-logos">
+      <div class="skill-item"><img src="docs/images/java.png"><span>Java</span></div>
+      <div class="skill-item"><img src="docs/images/sql.png"><span>SQL</span></div>
+      <div class="skill-item"><img src="docs/images/html.png"><span>HTML</span></div>
+      <div class="skill-item"><img src="docs/images/css.png"><span>CSS</span></div>
+      <div class="skill-item"><img src="docs/images/php.png"><span>PHP</span></div>
+    </div>
+
+    <h3>🖥️ Systèmes d'Exploitation</h3>
+    <div class="skills-logos">
+      <div class="skill-item"><img src="docs/images/ubuntu.png"><span>Ubuntu</span></div>
+      <div class="skill-item"><img src="docs/images/windows.png"><span>Windows</span></div>
+    </div>
+
+    <h3>🛠️ Outils</h3>
+    <div class="skills-logos">
+      <div class="skill-item"><img src="docs/images/github.png"><span>GitHub</span></div>
+      <div class="skill-item"><img src="docs/images/git.png"><span>Git</span></div>
+      <div class="skill-item"><img src="docs/images/intellij.png"><span>IntelliJ IDEA</span></div>
+      <div class="skill-item"><img src="docs/images/vscode.png"><span>VS Code</span></div>
+    </div>
+
+    <h2>Compétences Personnelles</h2>
+    <div style="padding-left: 20px;">
+      <ul>
+        <li>✅ Rigueur, Autonomie et Organisation (qualités essentielles en gestion de projet).</li>
+        <li>🤝🏾 Esprit d'équipe et Adaptabilité (consolidés par l'expérience d'animatrice).</li>
+        <li>⏳ Professionnalisme : Patiente, sérieuse et Ponctuelle.</li>
+        <li>🗣️ Langues : Français (Langue maternelle) et Anglais (Niveau B2).</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contact" class="hidden">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:djenebadiallo06@icloud.com">djenebadiallo06@icloud.com</a></p>
+    <p>GitHub: <a href="https://github.com/dj3n3b44" target="_blank">dj3n3b44</a></p>
+    <p>Téléphone: 07 67 41 91 70</p>
+
+    <h3>📬 Envoyez-moi un message</h3>
+
+    <form id="contact-form">
+      <input type="text" name="from_name" placeholder="Votre Nom" required>
+      <input type="email" name="from_email" placeholder="Votre Email" required>
+      <input type="text" name="subject" placeholder="Sujet" required>
+      <textarea name="message" placeholder="Votre message" rows="5" required></textarea>
+      <button type="submit">Envoyer</button>
+    </form>
+
+    <p id="message-status"></p>
+  </section>
+
+  <footer>
+    <p>© 2025 Djeneba Diallo | BUT Informatique</p>
+    <p>
+        GitHub: <a href="https://github.com/dj3n3b44" target="_blank">dj3n3b44</a> | Email: <a href="mailto:djenebadiallo06@icloud.com">djenebadiallo06@icloud.com</a>
+    </p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+  <script>
+    (function(){
+      emailjs.init("tiZ7Bjr5dRrHuvgAz");
+    })();
+  </script>
+
+  <script>
+    // Navigation
+    function showSection(id) {
+      document.querySelectorAll('section').forEach(s => {
+        if (s.id !== "avatar-section") {
+          s.classList.add('hidden');
+        }
+      });
+      document.getElementById(id).classList.remove('hidden');
+    }
+
+    // Afficher la section "À Propos" (intro) par défaut
+    showSection('intro');
+
+    function downloadCV() {
+      const link = document.createElement("a");
+      link.href = "docs/CV_Djeneba_Diallo.pdf";  // Chemin du CV
+      link.download = "CV_Djeneba_Diallo.pdf";   // Nom du fichier téléchargé
+      link.click();
+    }
+
+
+    // Soumission SMTP EmailJS
+    document.getElementById("contact-form").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      emailjs.sendForm(
+        "service_aofsma8",     // YOUR SMTP SERVICE ID
+        "template_gntcfms",    // YOUR TEMPLATE ID
+        this
+      ).then(
+        function() {
+          document.getElementById("message-status").innerHTML =
+            "✔️ Message envoyé avec succès !";
+        },
+        function(error) {
+          document.getElementById("message-status").innerHTML =
+            "❌ Erreur, veuillez réessayer.";
+          console.error(error);
+        }
+      );
+    });
+  </script>
+
+</body>
+</html>
