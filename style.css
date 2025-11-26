@@ -1,5 +1,5 @@
 *, *::before, *::after {
-  box-sizing: border-box; /* Ajouté pour garantir que le padding et la bordure sont inclus dans la largeur/hauteur de l'élément */
+  box-sizing: border-box; /* Garanti que le padding et la bordure sont inclus dans la largeur/hauteur de l'élément */
 }
 
 :root {
@@ -133,7 +133,7 @@ a:hover {
   max-width: 600px;
 }
 
-/* Bouton CV */
+/* Bouton CV (Positionnement normal pour les grands écrans) */
 #cv-button {
   position: absolute;
   top: 10px;
@@ -302,7 +302,7 @@ section {
   box-shadow: 0 0 10px var(--text);
 }  
 
-/* === Responsive pour mobile === */
+/* === Responsive pour mobile (Écrans <= 600px) === */
 @media (max-width: 600px) {
   body {
     padding: 20px;
@@ -313,7 +313,26 @@ section {
   }
   .avatar-container img {
     width: 120px;
+    margin-bottom: 10px;
   }
+  
+  /* --- FIX BOUTON CV (Retiré du positionnement absolu pour le mobile) --- */
+  #avatar-section {
+    position: static; /* Annule le positionnement relatif pour le mobile */
+  }
+
+  #cv-button {
+    position: static; /* Le bouton revient dans le flux normal de la page */
+    display: block; /* Prend toute la largeur disponible */
+    width: 80%; /* Pour qu'il ne soit pas trop large */
+    margin: 15px auto 0 auto; /* Centrage et marge au-dessus */
+    font-size: 14px;
+    padding: 10px;
+    top: initial; /* Réinitialisation des positions inutiles */
+    right: initial;
+  }
+  /* --- FIN FIX BOUTON CV --- */
+
   .avatar-text h2 {
     font-size: 20px;
   }
@@ -323,7 +342,7 @@ section {
   nav button, .lang-buttons button {
     font-size: 14px;
     padding: 8px 16px;
-    flex-grow: 1; /* Ajouté pour que les boutons de navigation prennent plus de place */
+    flex-grow: 1; /* Permet aux boutons de navigation de s'étirer */
   }
   h2 {
     font-size: 20px;
@@ -336,7 +355,7 @@ section {
   }
   .project {
     max-width: 100%;
-    flex: 1 1 100%; /* Ajouté pour forcer l'empilement pleine largeur sur mobile */
+    flex: 1 1 100%; /* Force l'empilement pleine largeur */
   }
   .skill-item {
     width: 80px;
@@ -344,50 +363,44 @@ section {
   .skill-item img {
     width: 40px;
   }
-  #cv-button {
-    font-size: 13px;
-    padding: 6px 10px;
-    top: 5px;
-    right: 5px;
-  }
 }
 
 /* NOUVEAU STYLE POUR LE LIEN DE CHANGEMENT DE LANGUE (plus discret) */
 .lang-switch-link {
-  text-align: right; /* Aligne le lien à droite */
-  margin: 5px 0 15px; /* Marge pour un bon espacement, plus petite */
+  text-align: right; 
+  margin: 5px 0 15px; 
 }
 
 .lang-switch-link a {
   display: inline-block;
-  color: var(--text); /* Couleur du texte vert */
-  border: 1px dashed #333; /* Bordure plus fine et discrète */
-  padding: 4px 8px; /* Padding plus petit */
-  font-size: 12px; /* Taille de police plus petite */
-  text-decoration: none; /* Enlève le soulignement du lien */
+  color: var(--text); 
+  border: 1px dashed #333; 
+  padding: 4px 8px; 
+  font-size: 12px; 
+  text-decoration: none; 
   transition: all 0.2s ease;
   font-family: 'Courier New', monospace;
-  background-color: transparent; /* Pas de fond par défaut */
-  opacity: 0.7; /* Légèrement transparent pour être discret */
+  background-color: transparent; 
+  opacity: 0.7; 
 }
 
 .lang-switch-link a:hover {
-  color: var(--highlight); /* Couleur accentuée au survol */
-  border-color: var(--highlight); /* Bordure accentuée au survol */
+  color: var(--highlight); 
+  border-color: var(--highlight); 
   text-decoration: none;
-  background-color: #1a1a1a; /* Léger fond sombre au survol */
-  opacity: 1; /* Pleine opacité au survol */
-  box-shadow: 0 0 3px var(--highlight); /* Petite ombre au survol */
+  background-color: #1a1a1a; 
+  opacity: 1; 
+  box-shadow: 0 0 3px var(--highlight); 
 }
 
 /* === Footer === */
 footer {
   margin-top: 50px;
-  padding: 20px 0 10px; /* Moins de padding en bas */
+  padding: 20px 0 10px; 
   text-align: center;
-  border-top: 1px dashed #333; /* Séparateur discret */
+  border-top: 1px dashed #333; 
   font-size: 14px;
-  color: #888; /* Couleur de texte subtile pour le footer */
+  color: #888; 
 }
 
 footer p {
@@ -395,12 +408,12 @@ footer p {
 }
 
 footer a {
-  color: var(--highlight); /* Utilise votre couleur d'accentuation (violet/magenta) */
+  color: var(--highlight); 
   text-decoration: none;
   transition: all 0.3s ease;
 }
 
 footer a:hover {
   text-decoration: underline;
-  color: var(--accent); /* Met en évidence l'accentuation au survol */
+  color: var(--accent); 
 }
