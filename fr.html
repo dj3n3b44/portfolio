@@ -19,7 +19,7 @@
       <div class="avatar-text">
         <h1>Djeneba Diallo</h1>
         <p>
-          Étudiante en 2ème année de BUT Informatique, spécialisation Gestion et Exploitation des Données. Je recherche un stage de 8 à 10 semaines à partir du 13 avril 2026 afin d'appliquer mes compétences en développement Java et en modélisation SQL.
+          Étudiante en 3ème année de BUT Informatique, spécialisation Gestion et Exploitation des Données. Je recherche un stage de 12 à 16 semaines à partir du 8 mars 2026 afin d'appliquer mes compétences en développement et en modélisation.
         </p>
       </div>
     </div>
@@ -37,20 +37,47 @@
       
       <h3>📚 Formation & Parcours</h3>
       <ul>
-        <li>BUT Informatique (2ème année en cours, IUT de Montreuil) - Parcours : Administration, gestion et exploitation des données.</li>
+        <li>BUT Informatique (3ème année en cours, IUT de Montreuil) - Parcours : Administration, gestion et exploitation des données.</li>
         <li>Baccalauréat Technologique STI2D (Systèmes d'Information et du Numérique), obtenu avec Mention Très Bien.</li>
       </ul>
 
       <h3>💼 Expérience et Certifications</h3>
       <ul>
+        <li>
+          <em>Stage - Chargée de projet RGPD (Les Ateliers Amasco)</em> : Mission professionnelle de 8 semaines. Étude d'une solution informatique de gestion des médias et mise en place d'un workflow conforme au RGPD. <br>
+          <a href="#" onclick="allerVersProjetAmasco(); return false;" style="color: #007BFF; text-decoration: underline;">Voir les détails de la mission ↓</a>
+        </li>
         <li>Certificat PSC1 (Prévention et Secours Civiques de Niveau 1) : Je suis formée aux premiers secours et apte à réagir en cas d'urgence.</li>
         <li>BAFA (Brevet d'Aptitude aux Fonctions d'Animateur) - Approfondissement : Accueillir des enfants en situation de handicap.</li>
         <li>Expérience polyvalente en animation : J'ai travaillé comme animatrice de séjours, animatrice scientifique, et animatrice pédagogique (pour des groupes de 6 à 17 ans), encadrant des loisirs, veillant à la sécurité, et gérant l'imprévu.</li>
       </ul>
     </section>
 
-<section id="projets" class="hidden">
-    <h2>Mes Projets</h2>
+  <section id="projets" class="hidden">
+    
+    <h2>Mon Expérience Professionnelle</h2>
+    <!-- Une ligne dédiée uniquement pour le stage -->
+    <div class="project-row">
+      <div class="project" id="carte-stage-amasco">
+        <img src="docs/images/soutenance_amasco.png" alt="Soutenance de stage Les Ateliers Amasco" width="370" height="208">
+        <h3>Stage : Flux Médias & RGPD</h3>
+        <p>Développement d'une application web (HTML/CSS/JS) et d'un backend Google Apps Script pour Les Ateliers Amasco. Tableau de bord de modération et algorithme d'attribution automatique des droits à l'image.</p>
+        <a href="docs/projet/Soutenance_Stage_Diallo.pdf" target="_blank" class="project-link-button">📊 Découvrir ma soutenance de stage</a>
+        <div style="margin-top: 15px; text-align: center;">
+          <a href="docs/projet/Rapport_Stage_Diallo.pdf" target="_blank" style="font-size: 0.85em;">📖 Ou lire le rapport de stage complet (PDF)</a>
+        </div>
+      </div>
+
+        <!-- Carte 2 : Animatrice Informatique -->
+      <div class="project" id="carte-anim-telligo">
+        <img src="docs/images/anim_info.png" alt="Animation Informatique Telligo" width="370" height="208">
+        <h3>Animatrice Informatique (Telligo)</h3>
+        <p>Conception et animation d'ateliers d'initiation à l'informatique pour les jeunes. Réalisation de mini-projets variés et adaptables touchant à de multiples domaines : développement logiciel, développement web ou encore gestion de bases de données.</p>      </div>
+    </div>
+    </div>
+
+    <h2 style="margin-top: 40px;">Mes Projets d'École</h2>
+    <!-- Ta grille originale avec tes 6 projets intacts -->
     <div class="project-row">
       <div class="project">
         <img src="docs/images/buvette_project.png" alt="Capture d'écran Projet Buvette" width="370" height="208">
@@ -58,40 +85,39 @@
         <p>Développement d'une application web permettant de gérer les stocks et les ventes d'une buvette associative. Le projet incluait la conception de la base de données relationnelle et la mise en place d'une interface d'administration pour le suivi des transactions en temps réel.</p>
         <a href="https://github.com/dj3n3b44/Project_Buvette" target="_blank" class="project-link-button">💻 Cliquer pour voir le code</a>
       </div>
+      
       <div class="project">
         <img src="docs/images/java_game.png" alt="Capture d'écran Jeu Java" width="370" height="208">
         <h3>Jeu 2D (JavaFX)</h3>
-        <p>Ce projet consistait à développer un jeu 2D intégrant un système d’animations, la détection des collisions, un inventaire interactif
-          et une gestion centralisée des événements. L’ensemble reposait sur une architecture MVC afin de garantir une organisation claire du code.</p>
+        <p>Ce projet consistait à développer un jeu 2D intégrant un système d’animations, la détection des collisions, un inventaire interactif et une gestion centralisée des événements. L’ensemble reposait sur une architecture MVC afin de garantir une organisation claire du code.</p>
         <a href="https://github.com/dj3n3b44/Project_2DGame" target="_blank" class="project-link-button">💻 Cliquer pour voir le code</a>
       </div>
+      
       <div class="project">
         <img src="docs/images/projet_robot.jpg" alt="Capture d'écran Projet Embarqué" width="370" height="208">
-        <h3>Main robotique contrôlée par capteurs de flexion (Arduino)</h3>
-        <p>Réalisation d’un système embarqué permettant de contrôler une main robotique à l’aide de capteurs de flexion.
-          Chaque capteur est relié à une carte Arduino. La flexion d’un doigt est lue en entrée analogique et traduite en mouvement du doigt correspondant.</p>
+        <h3>Main robotique contrôlée par capteurs (Arduino)</h3>
+        <p>Réalisation d’un système embarqué permettant de contrôler une main robotique à l’aide de capteurs de flexion. Chaque capteur est relié à une carte Arduino. La flexion d’un doigt est lue en entrée analogique et traduite en mouvement du doigt correspondant.</p>
         <a href="docs/projet/mainRobotique.pdf" download class="project-link-button">📄 Cliquer pour voir la présentation du projet</a>
       </div>
+      
       <div class="project">
         <img src="docs/images/vm.png" alt="Capture d'écran Projet Réseau" width="370" height="208">
         <h3>Installation de Services Réseau (LAMP)</h3>
-        <p>Ce projet consistait à créer et configurer une machine virtuelle Ubuntu, puis à installer et paramétrer la suite LAMP (Apache, MySQL, PHP). 
-        L'objectif était de déployer un environnement fonctionnel capable d'héberger un site web dynamique.</p>
+        <p>Ce projet consistait à créer et configurer une machine virtuelle Ubuntu, puis à installer et paramétrer la suite LAMP (Apache, MySQL, PHP). L'objectif était de déployer un environnement fonctionnel capable d'héberger un site web dynamique.</p>
         <a href="https://www.canva.com/design/DAG6igfBygI/0RTGqXSI08VLag6Do96fbw/view" target="_blank" class="project-link-button">📄 Cliquer pour voir la présentation</a>
       </div>
+      
       <div class="project">
         <img src="docs/images/web_project.png" alt="Site Web HTML CSS JS" width="370" height="208">
         <h3>Site Web (HTML/CSS/JS)</h3>
-        <p>Ce projet consistait à concevoir et développer un mini-site dédié aux Jeux Olympiques, intégrant un design responsive et plusieurs sections dynamiques.
-          L’objectif était de proposer une expérience interactive grâce à des animations JavaScript.</p>
+        <p>Ce projet consistait à concevoir et développer un mini-site dédié aux Jeux Olympiques, intégrant un design responsive et plusieurs sections dynamiques. L’objectif était de proposer une expérience interactive grâce à des animations JavaScript.</p>
         <a href="https://saefinal-8ba1e.firebaseapp.com/" target="_blank" class="project-link-button">🌐 Cliquer pour voir le site</a>
       </div>
+      
       <div class="project">
         <img src="docs/images/sql_project.png" alt="Capture d'écran Projet SQL" width="370" height="208">
         <h3>Base de Données (MySQL)</h3>
-        <p>Ce projet consistait à analyser les besoins d’un système d’information puis à concevoir une base de données complète.
-          Il incluait la réalisation des modèles conceptuel et logique, ainsi que la création du schéma relationnel.
-          L’objectif était d’aboutir à une structure optimisée capable de supporter des requêtes SQL avancées et adaptées aux contraintes du projet.</p>
+        <p>Ce projet consistait à analyser les besoins d’un système d’information puis à concevoir une base de données complète. Il incluait la réalisation des modèles conceptuel et logique, ainsi que la création du schéma relationnel. L’objectif était d’aboutir à une structure optimisée.</p>
         <a href="docs/projet/projet_vente_velo.zip" download class="project-link-button">📦 Télécharger le projet (ZIP)</a>
       </div>
     </div>
@@ -209,6 +235,15 @@
         }
       );
     });
+        function allerVersProjetAmasco() {
+      // Affiche la section projets
+      showSection('projets');
+      
+      // Laisse un petit délai pour que la section s'affiche avant de scroller
+      setTimeout(function() {
+        document.getElementById('carte-stage-amasco').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 150);
+    }
   </script>
 
 </body>
