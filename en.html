@@ -19,7 +19,7 @@
       <div class="avatar-text">
         <h1>Djeneba Diallo</h1>
         <p>
-          Second-year Computer Science student, specializing in Data Management and Exploitation. I am seeking an 8 to 10-week internship starting April 13, 2026, to apply my skills in Java development and SQL modeling.
+          Third-year Computer Science student, specializing in Data Management and Exploitation. I am seeking an 12 to 16-week internship starting March 8, 2027, to apply my skills in Java development and SQL modeling.
         </p>
       </div>
     </div>
@@ -37,20 +37,45 @@
     
     <h3>📚 Education & Academic Background</h3>
     <ul>
-        <li>Bachelor in Computer Science (BUT Informatique) 2nd year in progress in the IUT of Montreuil - Specialization: Administration, Management, and Exploitation of Data.</li>
+        <li>Bachelor in Computer Science (BUT Informatique) 3rd year in progress in the IUT of Montreuil - Specialization: Administration, Management, and Exploitation of Data.</li>
         <li>Technological Baccalaureate STI2D (Information and Digital Systems), obtained with Highest Honors (Mention Très Bien).</li>
     </ul>
 
     <h3>💼 Experience & Certifications</h3>
-    <ul>
-        <li>PSC1 Certificate (Civic Prevention and First Aid Level 1): I am trained in first aid and able to respond in case of emergency.</li>
-        <li>BAFA Certificate (Youth Leader Qualification) - Advanced module: Welcoming children with disabilities.</li>
-        <li>Polyvalent experience in youth animation: I worked as a camp counselor, science animator, and educational animator (for groups aged 6 to 17), supervising leisure activities, ensuring safety, and managing the unexpected.</li>
-    </ul>
+        <ul>
+          <li>
+            <em>Internship - GDPR Project Manager (Les Ateliers Amasco)</em>: 8-week professional mission. Study of a media management IT solution and implementation of a GDPR-compliant workflow. <br>
+            <a href="#" onclick="goToAmascoProject(); return false;" style="color: #007BFF; text-decoration: underline;">View mission details ↓</a>
+          </li>
+          <li>PSC1 Certificate (Civic Prevention and First Aid Level 1): I am trained in first aid and able to respond in case of emergency.</li>
+          <li>BAFA Certificate (Youth Leader Qualification) - Advanced module: Welcoming children with disabilities.</li>
+          <li>Polyvalent experience in youth animation: I worked as a camp counselor, science animator, and educational animator (for groups aged 6 to 17), supervising leisure activities, ensuring safety, and managing the unexpected.</li>
+        </ul>
 </section>
 
 <section id="projets" class="hidden">
-    <h2>My Projects</h2>
+  <h2>My Professional Experience</h2>
+  
+    <div class="project-row">
+      <!-- Card 1: Amasco Internship -->
+      <div class="project" id="carte-stage-amasco">
+        <img src="docs/images/soutenance_amasco.png" alt="Les Ateliers Amasco Internship Presentation" width="370" height="208">
+        <h3>Internship: Media Workflow & GDPR</h3>
+        <p>Development of a web application (HTML/CSS/JS) and a Google Apps Script backend for Les Ateliers Amasco. Moderation dashboard and automatic image rights assignment algorithm.</p>
+        <a href="docs/projet/Soutenance_Stage_Diallo.pdf" target="_blank" class="project-link-button">📊 Discover my case study</a>
+        <div style="margin-top: 15px; text-align: center;">
+          <a href="docs/projet/Rapport_Stage_Diallo.pdf" target="_blank" style="font-size: 0.85em; text-decoration: underline;">📖 Or read the full report (PDF)</a>
+        </div>
+      </div>
+
+      <!-- Card 2: Telligo IT Animator -->
+      <div class="project" id="carte-anim-telligo">
+        <img src="docs/images/anim_info.png" alt="Telligo IT Animation" width="370" height="208">
+        <h3>IT Activity Leader (Telligo)</h3>
+        <p>Design and facilitation of introductory computer science workshops for youth. Creation of varied and adaptable mini-projects covering multiple fields: software development, web development, and database management.</p>
+      </div>
+    </div>
+    <h2 style="margin-top: 40px;">My School Projects</h2>
     <div class="project-row">
       <div class="project">
         <img src="docs/images/buvette_project.png" alt="Buvette Management Project Screenshot" width="370" height="208">
@@ -206,6 +231,13 @@
         }
       );
     });
+      function goToAmascoProject() {
+        showSection('projets');
+        
+        setTimeout(function() {
+          document.getElementById('carte-stage-amasco').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 150);
+      }
   </script>
 
 </body>
