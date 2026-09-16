@@ -4,215 +4,487 @@
   <meta charset="UTF-8">
   <title>Portfolio | Djeneba Diallo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <style>
+    /* --- DESIGN MODERNE --- */
+    :root {
+      --primary: #4F46E5;
+      --primary-hover: #4338CA;
+      --bg-color: #F3F4F6;
+      --text-main: #1F2937;
+      --text-muted: #6B7280;
+      --card-bg: #FFFFFF;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+
+    a { text-decoration: none; color: var(--primary); }
+    a:hover { text-decoration: underline; }
+
+    /* En-tête / Avatar */
+    #avatar-section {
+      background: var(--card-bg);
+      padding: 3rem 1rem;
+      text-align: center;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      position: relative;
+    }
+    .avatar-container img {
+      border-radius: 15px;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      object-fit: cover;
+      margin-bottom: 1rem;
+    }
+    #cv-button {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    #cv-button:hover { background: var(--primary-hover); }
+
+    /* Navigation */
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      padding: 1rem;
+      background: var(--text-main);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      flex-wrap: wrap;
+    }
+    nav button {
+      background: transparent;
+      color: white;
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 8px 16px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    nav button:hover {
+      background: white;
+      color: var(--text-main);
+    }
+
+    /* Sections */
+    section.content-section {
+      max-width: 1100px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    .hidden { display: none; }
+
+    /* Grille de projets */
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 20px;
+      margin-top: 1.5rem;
+    }
+
+    /* Cartes (Projects & Skills) */
+    .card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .card:hover { transform: translateY(-5px); }
+    .card img { width: 100%; height: 200px; object-fit: cover; }
+    .card-content { padding: 1.5rem; flex-grow: 1; }
+    .card h3 { margin-top: 0; color: var(--primary); }
+    
+    /* Badges de compétences */
+    .badge {
+      display: inline-block;
+      background: #E0E7FF;
+      color: var(--primary-hover);
+      padding: 4px 10px;
+      border-radius: 12px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin: 2px;
+    }
+
+    /* Accordéons pour cacher le texte lourd */
+    details {
+      background: #F9FAFB;
+      border: 1px solid #E5E7EB;
+      border-radius: 8px;
+      padding: 10px;
+      margin-top: 15px;
+    }
+    summary {
+      font-weight: bold;
+      cursor: pointer;
+      color: var(--text-muted);
+      outline: none;
+    }
+    details p { margin-top: 10px; font-size: 0.9rem; color: var(--text-main); }
+
+    /* Matrice / Tableau */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+    }
+    th { background: var(--primary); color: white; padding: 15px; }
+    td { padding: 12px 15px; border-bottom: 1px solid #E5E7EB; text-align: center; }
+    tr:last-child td { border-bottom: none; }
+    td.proj-name { text-align: left; font-weight: 600; }
+
+    /* Boutons standards */
+    .btn {
+      display: inline-block;
+      background: var(--text-main);
+      color: white !important;
+      padding: 8px 15px;
+      border-radius: 6px;
+      margin-top: 10px;
+      text-align: center;
+    }
+    .btn:hover { background: var(--primary); }
+
+    /* Formulaire */
+    form input, form textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid #D1D5DB;
+      border-radius: 8px;
+      box-sizing: border-box;
+      font-family: inherit;
+    }
+    form button {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      width: 100%;
+      font-weight: bold;
+    }
+
+    footer { text-align: center; padding: 2rem; color: var(--text-muted); }
+  </style>
 </head>
 <body>
 
-  <p class="lang-switch-link" style="text-align: center; margin: 10px 0;">
-    <a href="index.html">Change Language / Changer de langue</a>
-  </p>
-
   <section id="avatar-section">
-    <button id="cv-button" onclick="downloadCV()">📄 Télécharger CV</button>
+    <button id="cv-button" onclick="downloadCV()">📄 Mon CV</button>
     <div class="avatar-container">
-      <img src="docs/images/avatar_.png" alt="Djeneba Diallo Avatar" width="180" height="270">
+      <img src="docs/images/avatar_.png" alt="Djeneba Diallo" width="150" height="225">
       <div class="avatar-text">
-        <h1>Djeneba Diallo</h1>
-        <p>
-          Étudiante en 3ème année de BUT Informatique, spécialisation Gestion et Exploitation des Données. Je recherche un stage de 12 à 16 semaines à partir du 8 mars 2027 afin d'appliquer mes compétences en développement et en modélisation.
+        <h1 style="margin:0.5rem 0;">Djeneba Diallo</h1>
+        <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto;">
+          BUT Informatique (3e année) • Data & Développement<br>
+          <i>À la recherche d'un stage (12-16 semaines) dès le 8 mars 2027.</i>
         </p>
       </div>
     </div>
   </section>
 
   <nav>
-    <button onclick="showSection('intro')">> À Propos</button>
-    <button onclick="showSection('matrice')">> Matrice des Compétences</button>
-    <button onclick="showSection('projets')">> Projets</button>
-    <button onclick="showSection('skills')">> Compétences BUT</button>
-    <button onclick="showSection('contact')">> Contact</button>
+    <button onclick="showSection('intro')">Profil</button>
+    <button onclick="showSection('projets')">Projets</button>
+    <button onclick="showSection('matrice')">Matrice BUT</button>
+    <button onclick="showSection('skills')">Compétences</button>
+    <button onclick="showSection('contact')">Contact</button>
   </nav>
 
-  <section id="intro" class="hidden">
-    <h2>À propos</h2>
+  <!-- PROFIL -->
+  <section id="intro" class="content-section">
+    <div class="card" style="padding: 2rem; border-radius: 12px;">
+      <h2>Mon Parcours</h2>
+      <p>Étudiante passionnée par le traitement des données et le développement logiciel, j'allie rigueur technique et fortes capacités de communication acquises grâce à mon expérience dans l'animation jeunesse.</p>
+      
+      <div style="display: flex; gap: 2rem; flex-wrap: wrap; margin-top: 2rem;">
+        <div style="flex: 1; min-width: 250px;">
+          <h3 style="color: var(--primary);">🎓 Formation</h3>
+          <ul style="padding-left: 1rem; color: var(--text-muted);">
+            <li><strong>BUT Informatique</strong> - IUT de Montreuil<br>Spécialité : Administration & Exploitation des données</li>
+            <li><strong>Baccalauréat STI2D</strong> - Mention Très Bien</li>
+          </ul>
+        </div>
+        <div style="flex: 1; min-width: 250px;">
+          <h3 style="color: var(--primary);">💼 Expériences</h3>
+          <ul style="padding-left: 1rem; color: var(--text-muted);">
+            <li><strong>Chargée de projet RGPD</strong> - Les Ateliers Amasco (Stage 8 sem.)</li>
+            <li><strong>Animatrice Informatique</strong> - Telligo</li>
+            <li><strong>Animatrice Jeunesse</strong> - Titulaire du BAFA & PSC1</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJETS -->
+  <section id="projets" class="content-section hidden">
+    <h2>Réalisations Professionnelles & Académiques</h2>
     
-    <h3>Formation et Parcours</h3>
-    <ul>
-      <li>BUT Informatique (3ème année en cours, IUT de Montreuil) - Parcours : Administration, gestion et exploitation des données.</li>
-      <li>Baccalauréat Technologique STI2D (Systèmes d'Information et du Numérique), obtenu avec Mention Très Bien.</li>
-    </ul>
+    <div class="project-grid">
+      <!-- Projet 1 -->
+      <div class="card" id="carte-stage-amasco">
+        <img src="docs/images/soutenance_amasco.png" alt="Stage Amasco">
+        <div class="card-content">
+          <h3>Flux Médias & RGPD (Stage)</h3>
+          <div>
+            <span class="badge">Conduite de projet</span>
+            <span class="badge">Gestion de données</span>
+            <span class="badge">Apps Script</span>
+          </div>
+          <p style="font-size: 0.95rem;">Création d'une application web et d'un tableau de bord automatisé pour la gestion des droits à l'image des enfants.</p>
+          
+          <details>
+            <summary>Voir ma réflexion (Portfolio BUT)</summary>
+            <p>J'ai dû m'adapter à des utilisateurs non techniciens. Cela m'a appris à traduire des contraintes légales (RGPD) en interfaces simples, me forçant à sortir du simple code pour comprendre les processus métiers.</p>
+          </details>
 
-    <h3>Expérience et Certifications</h3>
-    <ul>
-      <li>
-        <em>Stage - Chargée de projet RGPD (Les Ateliers Amasco)</em> : Mission professionnelle de 8 semaines. Étude d'une solution informatique de gestion des médias et mise en place d'un workflow conforme au RGPD. <br>
-        <a href="#" onclick="allerVersProjetAmasco(); return false;" style="color: #007BFF; text-decoration: underline;">Voir les détails de la mission ↓</a>
-      </li>
-      <li>Certificat PSC1 (Prévention et Secours Civiques de Niveau 1) : Je suis formée aux premiers secours et apte à réagir en cas d'urgence.</li>
-      <li>BAFA (Brevet d'Aptitude aux Fonctions d'Animateur) - Approfondissement : Accueillir des enfants en situation de handicap.</li>
-      <li>Expérience polyvalente en animation : J'ai travaillé comme animatrice de séjours, animatrice scientifique, et animatrice pédagogique, encadrant des loisirs, veillant à la sécurité, et gérant l'imprévu.</li>
-    </ul>
-  </section>
-
-  <!-- NOUVELLE SECTION : TABLEAU CROISÉ -->
-  <section id="matrice" class="hidden">
-    <h2>Tableau Croisé : Projets et Compétences</h2>
-    <p>Cette matrice illustre la double lecture de mon portfolio, mettant en relation mes réalisations et les compétences du programme national du BUT Informatique.</p>
-    <table border="1" style="width:100%; text-align:center; border-collapse: collapse; margin-top: 20px; background-color: white;">
-      <tr style="background-color: #f2f2f2;">
-        <th style="padding: 10px; text-align:left;">Projets \ Compétences</th>
-        <th style="padding: 10px;">Gérer des données</th>
-        <th style="padding: 10px;">Conduire un projet</th>
-        <th style="padding: 10px;">Collaborer en équipe</th>
-      </tr>
-      <tr>
-        <td style="padding: 10px; text-align:left;">Stage : Flux Médias et RGPD</td>
-        <td>✔️</td>
-        <td>✔️</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td style="padding: 10px; text-align:left;">Gestion de Buvette Associative</td>
-        <td>✔️</td>
-        <td>✔️</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td style="padding: 10px; text-align:left;">Jeu 2D (JavaFX)</td>
-        <td></td>
-        <td>✔️</td>
-        <td>✔️</td>
-      </tr>
-      <tr>
-        <td style="padding: 10px; text-align:left;">Animatrice Informatique (Telligo)</td>
-        <td></td>
-        <td></td>
-        <td>✔️</td>
-      </tr>
-      <tr>
-        <td style="padding: 10px; text-align:left;">Base de Données (MySQL)</td>
-        <td>✔️</td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td style="padding: 10px; text-align:left;">Installation de Services (LAMP)</td>
-        <td></td>
-        <td>✔️</td>
-        <td></td>
-      </tr>
-    </table>
-  </section>
-
-  <section id="projets" class="hidden">
-    <h2>Mon Expérience Professionnelle</h2>
-    <div class="project-row">
-      <div class="project" id="carte-stage-amasco">
-        <img src="docs/images/soutenance_amasco.png" alt="Soutenance de stage Les Ateliers Amasco" width="370" height="208">
-        <h3>Stage : Flux Médias et RGPD</h3>
-        <p>Développement d'une application web (HTML/CSS/JS) et d'un backend Google Apps Script pour Les Ateliers Amasco. Tableau de bord de modération et algorithme d'attribution automatique des droits à l'image.</p>
-        <p><i>Compétences mobilisées : Conduire un projet, Gérer des données.</i></p>
-        <p><i>Posture réflexive :</i> Ce projet m'a confrontée à de vrais enjeux de conformité légale. J'ai dû faire preuve d'autonomie pour proposer une solution adaptée à des utilisateurs non techniciens. Cela m'a appris à traduire des besoins complexes en interfaces simples et sécurisées, me forçant à sortir du simple code pour comprendre les processus métiers de l'organisation.</p>
-        <a href="docs/projet/Soutenance_Stage_Diallo.pdf" target="_blank" class="project-link-button">📊 Découvrir ma soutenance de stage</a>
-        <div style="margin-top: 15px; text-align: center;">
-          <a href="docs/projet/Rapport_Stage_Diallo.pdf" target="_blank" style="font-size: 0.85em;">📖 Ou lire le rapport de stage complet (PDF)</a>
+          <div style="margin-top: 15px; display: flex; gap: 10px; flex-wrap: wrap;">
+            <a href="docs/projet/Soutenance_Stage_Diallo.pdf" target="_blank" class="btn">Soutenance</a>
+            <a href="docs/projet/Rapport_Stage_Diallo.pdf" target="_blank" class="btn" style="background:var(--text-muted);">Rapport PDF</a>
+          </div>
         </div>
       </div>
 
-      <div class="project" id="carte-anim-telligo">
-        <img src="docs/images/anim_info.png" alt="Animation Informatique Telligo" width="370" height="208">
-        <h3>Animatrice Informatique (Telligo)</h3>
-        <p>Conception et animation d'ateliers d'initiation à l'informatique pour les jeunes. Réalisation de mini-projets adaptables touchant au développement logiciel et web.</p>
-        <p><i>Compétences mobilisées : Collaborer au sein d'une équipe.</i></p>
-        <p><i>Posture réflexive :</i> Transmettre des concepts informatiques à des jeunes m'a obligée à vulgariser mon discours et à structurer ma pensée. Cette expérience d'animation a forgé ma patience et ma capacité à interagir et communiquer efficacement, des atouts indispensables pour le travail en équipe de développement.</p>
-      </div>
-    </div>
+      <!-- Projet 2 -->
+      <div class="card">
+        <img src="docs/images/buvette_project.png" alt="Projet Buvette">
+        <div class="card-content">
+          <h3>Buvette Associative MVC</h3>
+          <div>
+            <span class="badge">PHP</span>
+            <span class="badge">SQL</span>
+            <span class="badge">Architecture MVC</span>
+          </div>
+          <p style="font-size: 0.95rem;">Application web de gestion des stocks et ventes en temps réel pour une association étudiante.</p>
+          
+          <details>
+            <summary>Voir ma réflexion (Portfolio BUT)</summary>
+            <p>L'utilisation de MVC m'a fait réaliser l'importance de séparer la logique métier de l'affichage. J'ai aussi compris qu'une base de données mal pensée au départ rend l'évolution complexe.</p>
+          </details>
 
-    <h2 style="margin-top: 40px;">Mes Projets d'École</h2>
-    <div class="project-row">
-      <div class="project">
-        <img src="docs/images/buvette_project.png" alt="Capture d'écran Projet Buvette" width="370" height="208">
-        <h3>Gestion de Buvette Associative (PHP/SQL)</h3>
-        <p>Développement d'une application web avec architecture MVC permettant de gérer les stocks et les ventes d'une buvette associative.</p>
-        <p><i>Compétences mobilisées : Gérer des données, Conduire un projet.</i></p>
-        <p><i>Posture réflexive :</i> L'utilisation d'une structure MVC m'a fait réaliser l'importance de séparer la logique métier de l'affichage. J'ai pris du recul sur la modélisation des données : une base mal pensée au départ rend l'évolution de l'application très complexe. C'est une erreur que j'ai su corriger et qui guide désormais ma façon de coder.</p>
-        <a href="https://github.com/dj3n3b44/Project_Buvette" target="_blank" class="project-link-button">💻 Cliquer pour voir le code</a>
+          <a href="https://github.com/dj3n3b44/Project_Buvette" target="_blank" class="btn">Code Source GitHub</a>
+        </div>
       </div>
-      
-      <div class="project">
-        <img src="docs/images/java_game.png" alt="Capture d'écran Jeu Java" width="370" height="208">
-        <h3>Jeu 2D (JavaFX)</h3>
-        <p>Développement d'un jeu 2D intégrant animations, collisions, inventaire et gestion des événements.</p>
-        <p><i>Compétences mobilisées : Conduire un projet, Collaborer en équipe.</i></p>
-        <p><i>Posture réflexive :</i> Ce projet de groupe a été mon premier véritable test sur la gestion des conflits de code avec Git. J'ai appris qu'un bon code individuel ne suffit pas ; il faut communiquer sur l'architecture globale pour que les modules de chacun s'imbriquent sans erreur.</p>
-        <a href="https://github.com/dj3n3b44/Project_2DGame" target="_blank" class="project-link-button">💻 Cliquer pour voir le code</a>
+
+      <!-- Projet 3 -->
+      <div class="card">
+        <img src="docs/images/java_game.png" alt="Jeu 2D">
+        <div class="card-content">
+          <h3>Jeu vidéo 2D</h3>
+          <div>
+            <span class="badge">JavaFX</span>
+            <span class="badge">Travail d'équipe</span>
+          </div>
+          <p style="font-size: 0.95rem;">Développement d'un jeu intégrant animations, collisions et gestion d'inventaire.</p>
+          
+          <details>
+            <summary>Voir ma réflexion (Portfolio BUT)</summary>
+            <p>Ce projet a été mon premier test sur la gestion des conflits avec Git en équipe. J'ai appris qu'un bon code individuel ne suffit pas : il faut communiquer sur l'architecture globale.</p>
+          </details>
+
+          <a href="https://github.com/dj3n3b44/Project_2DGame" target="_blank" class="btn">Code Source GitHub</a>
+        </div>
       </div>
-      
-      <div class="project">
-        <img src="docs/images/sql_project.png" alt="Capture d'écran Projet SQL" width="370" height="208">
-        <h3>Base de Données (MySQL)</h3>
-        <p>Analyse des besoins d'un système d'information et conception d'une base de données optimisée (modèles conceptuel et logique).</p>
-        <p><i>Compétences mobilisées : Gérer des données.</i></p>
-        <p><i>Posture réflexive :</i> J'ai appris à ne pas me précipiter sur l'implémentation. La phase de modélisation théorique m'a permis de comprendre comment assurer l'intégrité des données à long terme avant d'écrire la moindre requête SQL.</p>
-        <a href="docs/projet/projet_vente_velo.zip" download class="project-link-button">📦 Télécharger le projet (ZIP)</a>
+
+      <!-- Projet 4 -->
+      <div class="card">
+        <img src="docs/images/vm.png" alt="Projet Réseau">
+        <div class="card-content">
+          <h3>Déploiement Serveur LAMP</h3>
+          <div>
+            <span class="badge">Ubuntu</span>
+            <span class="badge">Apache/MySQL</span>
+          </div>
+          <p style="font-size: 0.95rem;">Configuration d'une machine virtuelle Linux pour l'hébergement sécurisé d'un site web dynamique.</p>
+          <a href="https://www.canva.com/design/DAG6igfBygI/0RTGqXSI08VLag6Do96fbw/view" target="_blank" class="btn">Voir la présentation</a>
+        </div>
+      </div>
+
+      <!-- Projet 5 -->
+      <div class="card">
+        <img src="docs/images/sql_project.png" alt="Projet SQL">
+        <div class="card-content">
+          <h3>Modélisation Base de Données</h3>
+          <div>
+            <span class="badge">MySQL</span>
+            <span class="badge">MCD / MLD</span>
+          </div>
+          <p style="font-size: 0.95rem;">Analyse des besoins d'un SI et création d'une structure relationnelle optimisée de A à Z.</p>
+          <a href="docs/projet/projet_vente_velo.zip" download class="btn">Télécharger (ZIP)</a>
+        </div>
+      </div>
+
+      <!-- Projet 6 -->
+      <div class="card">
+        <img src="docs/images/anim_info.png" alt="Animation">
+        <div class="card-content">
+          <h3>Animation Informatique</h3>
+          <div>
+            <span class="badge">Pédagogie</span>
+            <span class="badge">Communication</span>
+          </div>
+          <p style="font-size: 0.95rem;">Animation d'ateliers d'initiation au code pour des jeunes chez Telligo.</p>
+          
+          <details>
+            <summary>Voir ma réflexion (Portfolio BUT)</summary>
+            <p>Vulgariser l'informatique a forgé ma patience et ma clarté d'expression. Des atouts indispensables pour s'intégrer efficacement dans une équipe de développeurs.</p>
+          </details>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- NOUVELLE SECTION : COMPÉTENCES RESTRUCTURÉES -->
-  <section id="skills" class="hidden">
-    <h2>Compétences du BUT Informatique</h2>
-    <p style="margin-bottom: 30px;">Cette section regroupe la maîtrise de mes outils techniques au sein des compétences théoriques du programme national, accompagnée d'une analyse distanciée de mon apprentissage.</p>
-    
-    <h3>1. Gérer des données de l'information</h3>
-    <p>Concevoir, optimiser et administrer des bases de données relationnelles pour répondre à un cahier des charges, tout en assurant la confidentialité et l'intégrité des données.</p>
-    <ul>
-      <li><i>Projets associés :</i> Gestion de Buvette Associative, Base de Données MySQL, Stage Amasco.</li>
-      <li><i>Outils maîtrisés :</i> SQL, MySQL, PHP, Google Apps Script.</li>
-    </ul>
-    <p><i>Bilan de la compétence :</i> J'ai dépassé le stade de la simple création de tables pour intégrer des notions d'optimisation et de sécurité. Mon stage m'a particulièrement sensibilisée au RGPD, m'apprenant que la gestion des données est autant une responsabilité éthique et légale qu'un défi technique.</p>
-
-    <h3 style="margin-top: 30px;">2. Conduire un projet</h3>
-    <p>Identifier les besoins métiers, formaliser les attentes des clients et appliquer une démarche de suivi pour intégrer un projet dans le système d'information d'une organisation.</p>
-    <ul>
-      <li><i>Projets associés :</i> Stage Amasco, Jeu 2D Java, Déploiement LAMP.</li>
-      <li><i>Outils maîtrisés :</i> Méthodologies de suivi, Ubuntu, Modélisation MVC.</li>
-    </ul>
-    <p><i>Bilan de la compétence :</i> La conduite de projet m'a appris l'importance de l'adaptation. J'ai pu expérimenter le cycle de vie complet d'un logiciel, de l'expression du besoin à la mise en production. J'ai compris qu'un projet réussi est un projet qui répond réellement au besoin de l'utilisateur, et non pas seulement une prouesse technique isolée.</p>
-
-    <h3 style="margin-top: 30px;">3. Collaborer au sein d'une équipe informatique</h3>
-    <p>Comprendre la structure de l'informatique dans une organisation, mobiliser des compétences interpersonnelles et rendre compte de son activité.</p>
-    <ul>
-      <li><i>Projets associés :</i> Jeu 2D Java, Animation Telligo.</li>
-      <li><i>Outils maîtrisés :</i> Git, GitHub, IntelliJ, VS Code.</li>
-    </ul>
-    <p><i>Bilan de la compétence :</i> C'est ici que ma double casquette d'informaticienne et d'animatrice jeunesse (BAFA) prend tout son sens. L'organisation d'activités pour des jeunes m'a donné des réflexes de communication, de gestion des imprévus et d'écoute active qui sont cruciaux lors du développement collaboratif sur GitHub ou lors des réunions d'équipe.</p>
-
+  <!-- MATRICE -->
+  <section id="matrice" class="content-section hidden">
+    <div class="card" style="padding: 2rem;">
+      <h2>Matrice des Compétences</h2>
+      <p style="color: var(--text-muted);">Vue croisée validant les acquis du programme national (Semestre 6).</p>
+      
+      <div style="overflow-x: auto;">
+        <table>
+          <tr>
+            <th style="text-align:left; border-radius: 8px 0 0 0;">Projets</th>
+            <th>Gérer des données</th>
+            <th>Conduire un projet</th>
+            <th style="border-radius: 0 8px 0 0;">Collaborer en équipe</th>
+          </tr>
+          <tr>
+            <td class="proj-name">Stage : Amasco</td>
+            <td>🔵</td>
+            <td>🔵</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="proj-name">Buvette Associative</td>
+            <td>🔵</td>
+            <td>🔵</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="proj-name">Jeu 2D (JavaFX)</td>
+            <td></td>
+            <td>🔵</td>
+            <td>🔵</td>
+          </tr>
+          <tr>
+            <td class="proj-name">Ateliers Telligo</td>
+            <td></td>
+            <td></td>
+            <td>🔵</td>
+          </tr>
+          <tr>
+            <td class="proj-name">Modélisation MySQL</td>
+            <td>🔵</td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="proj-name">Serveur LAMP</td>
+            <td></td>
+            <td>🔵</td>
+            <td></td>
+          </tr>
+        </table>
+      </div>
+    </div>
   </section>
 
-  <section id="contact" class="hidden">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:djenebadiallo06@icloud.com">djenebadiallo06@icloud.com</a></p>
-    <p>GitHub: <a href="https://github.com/dj3n3b44" target="_blank">dj3n3b44</a></p>
-    <p>Téléphone: 07 67 41 91 70</p>
+  <!-- SKILLS / COMPETENCES BUT -->
+  <section id="skills" class="content-section hidden">
+    <h2>Bilan des Compétences</h2>
+    <div class="project-grid">
+      
+      <div class="card" style="padding: 1.5rem;">
+        <h3>1. Gérer des données</h3>
+        <p style="color: var(--text-muted); font-size: 0.9rem;">Concevoir, optimiser et administrer des bases de données sécurisées.</p>
+        <div style="margin-bottom: 1rem;">
+          <span class="badge">SQL / MySQL</span>
+          <span class="badge">PHP</span>
+        </div>
+        <details>
+          <summary>Bilan d'acquisition</summary>
+          <p>J'ai dépassé le stade de la simple création de tables pour intégrer l'optimisation. Mon stage m'a sensibilisée au RGPD : la data est autant une responsabilité éthique qu'un défi technique.</p>
+        </details>
+      </div>
 
-    <h3>📬 Envoyez-moi un message</h3>
+      <div class="card" style="padding: 1.5rem;">
+        <h3>2. Conduire un projet</h3>
+        <p style="color: var(--text-muted); font-size: 0.9rem;">Identifier les besoins, formaliser les attentes et assurer le suivi de développement.</p>
+        <div style="margin-bottom: 1rem;">
+          <span class="badge">Architecture MVC</span>
+          <span class="badge">Linux / LAMP</span>
+        </div>
+        <details>
+          <summary>Bilan d'acquisition</summary>
+          <p>J'ai expérimenté le cycle de vie complet d'un logiciel. J'ai compris qu'un projet réussi répond d'abord au besoin réel de l'utilisateur final avant d'être une prouesse technique.</p>
+        </details>
+      </div>
 
-    <form id="contact-form">
-      <input type="text" name="from_name" placeholder="Votre Nom" required>
-      <input type="email" name="from_email" placeholder="Votre Email" required>
-      <input type="text" name="subject" placeholder="Sujet" required>
-      <textarea name="message" placeholder="Votre message" rows="5" required></textarea>
-      <button type="submit">Envoyer</button>
-    </form>
+      <div class="card" style="padding: 1.5rem;">
+        <h3>3. Collaborer en équipe</h3>
+        <p style="color: var(--text-muted); font-size: 0.9rem;">Intégrer une équipe, utiliser les outils de versioning et communiquer efficacement.</p>
+        <div style="margin-bottom: 1rem;">
+          <span class="badge">Git / GitHub</span>
+          <span class="badge">Méthodologie Agile</span>
+        </div>
+        <details>
+          <summary>Bilan d'acquisition</summary>
+          <p>L'animation jeunesse (BAFA) m'a donné des réflexes de gestion d'imprévus et d'écoute active, des compétences "soft skills" qui m'aident quotidiennement lors des conflits de code sur GitHub.</p>
+        </details>
+      </div>
 
-    <p id="message-status"></p>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="content-section hidden">
+    <div class="card" style="padding: 2rem; max-width: 600px; margin: 0 auto;">
+      <h2 style="text-align: center;">Me Contacter</h2>
+      <p style="text-align: center; color: var(--text-muted);">
+        Disponible pour un stage à partir du 8 mars 2027.
+      </p>
+
+      <form id="contact-form" style="margin-top: 2rem;">
+        <input type="text" name="from_name" placeholder="Votre Nom" required>
+        <input type="email" name="from_email" placeholder="Votre Email" required>
+        <input type="text" name="subject" placeholder="Sujet" required>
+        <textarea name="message" placeholder="Votre message" rows="4" required></textarea>
+        <button type="submit">Envoyer le message</button>
+      </form>
+      <p id="message-status" style="text-align: center; margin-top: 10px; font-weight: bold;"></p>
+    </div>
   </section>
 
   <footer>
     <p>© 2026 Djeneba Diallo | BUT Informatique</p>
     <p>
-        GitHub: <a href="https://github.com/dj3n3b44" target="_blank">dj3n3b44</a> | Email: <a href="mailto:djenebadiallo06@icloud.com">djenebadiallo06@icloud.com</a>
+        <a href="https://github.com/dj3n3b44" target="_blank">GitHub</a> • 
+        <a href="mailto:djenebadiallo06@icloud.com">djenebadiallo06@icloud.com</a>
     </p>
   </footer>
 
@@ -221,20 +493,15 @@
     (function(){
       emailjs.init("tiZ7Bjr5dRrHuvgAz");
     })();
-  </script>
 
-  <script>
-    // Navigation
+    // Navigation minimaliste
     function showSection(id) {
-      document.querySelectorAll('section').forEach(s => {
-        if (s.id !== "avatar-section") {
-          s.classList.add('hidden');
-        }
+      document.querySelectorAll('section.content-section').forEach(s => {
+        s.classList.add('hidden');
       });
       document.getElementById(id).classList.remove('hidden');
     }
 
-    // Afficher la section "À Propos" (intro) par défaut
     showSection('intro');
 
     function downloadCV() {
@@ -244,22 +511,16 @@
       link.click();
     }
 
-    // Soumission SMTP EmailJS
     document.getElementById("contact-form").addEventListener("submit", function(event) {
       event.preventDefault();
-
-      emailjs.sendForm(
-        "service_aofsma8",     
-        "template_gntcfms",    
-        this
-      ).then(
+      emailjs.sendForm("service_aofsma8", "template_gntcfms", this).then(
         function() {
-          document.getElementById("message-status").innerHTML =
-            "✔️ Message envoyé avec succès !";
+          document.getElementById("message-status").innerHTML = "✔️ Message envoyé avec succès !";
+          document.getElementById("message-status").style.color = "green";
         },
         function(error) {
-          document.getElementById("message-status").innerHTML =
-            "❌ Erreur, veuillez réessayer.";
+          document.getElementById("message-status").innerHTML = "❌ Erreur, veuillez réessayer.";
+          document.getElementById("message-status").style.color = "red";
           console.error(error);
         }
       );
