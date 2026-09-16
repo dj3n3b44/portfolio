@@ -27,137 +27,167 @@
 
   <nav>
     <button onclick="showSection('intro')">> À Propos</button>
+    <button onclick="showSection('matrice')">> Matrice des Compétences</button>
     <button onclick="showSection('projets')">> Projets</button>
-    <button onclick="showSection('skills')">> Compétences</button>
+    <button onclick="showSection('skills')">> Compétences BUT</button>
     <button onclick="showSection('contact')">> Contact</button>
   </nav>
 
-    <section id="intro" class="hidden">
-      <h2>À propos</h2>
-      
-      <h3>📚 Formation & Parcours</h3>
-      <ul>
-        <li>BUT Informatique (3ème année en cours, IUT de Montreuil) - Parcours : Administration, gestion et exploitation des données.</li>
-        <li>Baccalauréat Technologique STI2D (Systèmes d'Information et du Numérique), obtenu avec Mention Très Bien.</li>
-      </ul>
+  <section id="intro" class="hidden">
+    <h2>À propos</h2>
+    
+    <h3>Formation et Parcours</h3>
+    <ul>
+      <li>BUT Informatique (3ème année en cours, IUT de Montreuil) - Parcours : Administration, gestion et exploitation des données.</li>
+      <li>Baccalauréat Technologique STI2D (Systèmes d'Information et du Numérique), obtenu avec Mention Très Bien.</li>
+    </ul>
 
-      <h3>💼 Expérience et Certifications</h3>
-      <ul>
-        <li>
-          <em>Stage - Chargée de projet RGPD (Les Ateliers Amasco)</em> : Mission professionnelle de 8 semaines. Étude d'une solution informatique de gestion des médias et mise en place d'un workflow conforme au RGPD. <br>
-          <a href="#" onclick="allerVersProjetAmasco(); return false;" style="color: #007BFF; text-decoration: underline;">Voir les détails de la mission ↓</a>
-        </li>
-        <li>Certificat PSC1 (Prévention et Secours Civiques de Niveau 1) : Je suis formée aux premiers secours et apte à réagir en cas d'urgence.</li>
-        <li>BAFA (Brevet d'Aptitude aux Fonctions d'Animateur) - Approfondissement : Accueillir des enfants en situation de handicap.</li>
-        <li>Expérience polyvalente en animation : J'ai travaillé comme animatrice de séjours, animatrice scientifique, et animatrice pédagogique (pour des groupes de 6 à 17 ans), encadrant des loisirs, veillant à la sécurité, et gérant l'imprévu.</li>
-      </ul>
-    </section>
+    <h3>Expérience et Certifications</h3>
+    <ul>
+      <li>
+        <em>Stage - Chargée de projet RGPD (Les Ateliers Amasco)</em> : Mission professionnelle de 8 semaines. Étude d'une solution informatique de gestion des médias et mise en place d'un workflow conforme au RGPD. <br>
+        <a href="#" onclick="allerVersProjetAmasco(); return false;" style="color: #007BFF; text-decoration: underline;">Voir les détails de la mission ↓</a>
+      </li>
+      <li>Certificat PSC1 (Prévention et Secours Civiques de Niveau 1) : Je suis formée aux premiers secours et apte à réagir en cas d'urgence.</li>
+      <li>BAFA (Brevet d'Aptitude aux Fonctions d'Animateur) - Approfondissement : Accueillir des enfants en situation de handicap.</li>
+      <li>Expérience polyvalente en animation : J'ai travaillé comme animatrice de séjours, animatrice scientifique, et animatrice pédagogique, encadrant des loisirs, veillant à la sécurité, et gérant l'imprévu.</li>
+    </ul>
+  </section>
+
+  <!-- NOUVELLE SECTION : TABLEAU CROISÉ -->
+  <section id="matrice" class="hidden">
+    <h2>Tableau Croisé : Projets et Compétences</h2>
+    <p>Cette matrice illustre la double lecture de mon portfolio, mettant en relation mes réalisations et les compétences du programme national du BUT Informatique.</p>
+    <table border="1" style="width:100%; text-align:center; border-collapse: collapse; margin-top: 20px; background-color: white;">
+      <tr style="background-color: #f2f2f2;">
+        <th style="padding: 10px; text-align:left;">Projets \ Compétences</th>
+        <th style="padding: 10px;">Gérer des données</th>
+        <th style="padding: 10px;">Conduire un projet</th>
+        <th style="padding: 10px;">Collaborer en équipe</th>
+      </tr>
+      <tr>
+        <td style="padding: 10px; text-align:left;">Stage : Flux Médias et RGPD</td>
+        <td>✔️</td>
+        <td>✔️</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td style="padding: 10px; text-align:left;">Gestion de Buvette Associative</td>
+        <td>✔️</td>
+        <td>✔️</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td style="padding: 10px; text-align:left;">Jeu 2D (JavaFX)</td>
+        <td></td>
+        <td>✔️</td>
+        <td>✔️</td>
+      </tr>
+      <tr>
+        <td style="padding: 10px; text-align:left;">Animatrice Informatique (Telligo)</td>
+        <td></td>
+        <td></td>
+        <td>✔️</td>
+      </tr>
+      <tr>
+        <td style="padding: 10px; text-align:left;">Base de Données (MySQL)</td>
+        <td>✔️</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td style="padding: 10px; text-align:left;">Installation de Services (LAMP)</td>
+        <td></td>
+        <td>✔️</td>
+        <td></td>
+      </tr>
+    </table>
+  </section>
 
   <section id="projets" class="hidden">
-    
     <h2>Mon Expérience Professionnelle</h2>
-    <!-- Une ligne dédiée uniquement pour le stage -->
     <div class="project-row">
       <div class="project" id="carte-stage-amasco">
         <img src="docs/images/soutenance_amasco.png" alt="Soutenance de stage Les Ateliers Amasco" width="370" height="208">
-        <h3>Stage : Flux Médias & RGPD</h3>
+        <h3>Stage : Flux Médias et RGPD</h3>
         <p>Développement d'une application web (HTML/CSS/JS) et d'un backend Google Apps Script pour Les Ateliers Amasco. Tableau de bord de modération et algorithme d'attribution automatique des droits à l'image.</p>
+        <p><i>Compétences mobilisées : Conduire un projet, Gérer des données.</i></p>
+        <p><i>Posture réflexive :</i> Ce projet m'a confrontée à de vrais enjeux de conformité légale. J'ai dû faire preuve d'autonomie pour proposer une solution adaptée à des utilisateurs non techniciens. Cela m'a appris à traduire des besoins complexes en interfaces simples et sécurisées, me forçant à sortir du simple code pour comprendre les processus métiers de l'organisation.</p>
         <a href="docs/projet/Soutenance_Stage_Diallo.pdf" target="_blank" class="project-link-button">📊 Découvrir ma soutenance de stage</a>
         <div style="margin-top: 15px; text-align: center;">
           <a href="docs/projet/Rapport_Stage_Diallo.pdf" target="_blank" style="font-size: 0.85em;">📖 Ou lire le rapport de stage complet (PDF)</a>
         </div>
       </div>
 
-        <!-- Carte 2 : Animatrice Informatique -->
       <div class="project" id="carte-anim-telligo">
         <img src="docs/images/anim_info.png" alt="Animation Informatique Telligo" width="370" height="208">
         <h3>Animatrice Informatique (Telligo)</h3>
-        <p>Conception et animation d'ateliers d'initiation à l'informatique pour les jeunes. Réalisation de mini-projets variés et adaptables touchant à de multiples domaines : développement logiciel, développement web ou encore gestion de bases de données.</p>      </div>
-    </div>
+        <p>Conception et animation d'ateliers d'initiation à l'informatique pour les jeunes. Réalisation de mini-projets adaptables touchant au développement logiciel et web.</p>
+        <p><i>Compétences mobilisées : Collaborer au sein d'une équipe.</i></p>
+        <p><i>Posture réflexive :</i> Transmettre des concepts informatiques à des jeunes m'a obligée à vulgariser mon discours et à structurer ma pensée. Cette expérience d'animation a forgé ma patience et ma capacité à interagir et communiquer efficacement, des atouts indispensables pour le travail en équipe de développement.</p>
+      </div>
     </div>
 
     <h2 style="margin-top: 40px;">Mes Projets d'École</h2>
-    <!-- Ta grille originale avec tes 6 projets intacts -->
     <div class="project-row">
       <div class="project">
         <img src="docs/images/buvette_project.png" alt="Capture d'écran Projet Buvette" width="370" height="208">
         <h3>Gestion de Buvette Associative (PHP/SQL)</h3>
-        <p>Développement d'une application web permettant de gérer les stocks et les ventes d'une buvette associative. Le projet incluait la conception de la base de données relationnelle et la mise en place d'une interface d'administration pour le suivi des transactions en temps réel.</p>
+        <p>Développement d'une application web avec architecture MVC permettant de gérer les stocks et les ventes d'une buvette associative.</p>
+        <p><i>Compétences mobilisées : Gérer des données, Conduire un projet.</i></p>
+        <p><i>Posture réflexive :</i> L'utilisation d'une structure MVC m'a fait réaliser l'importance de séparer la logique métier de l'affichage. J'ai pris du recul sur la modélisation des données : une base mal pensée au départ rend l'évolution de l'application très complexe. C'est une erreur que j'ai su corriger et qui guide désormais ma façon de coder.</p>
         <a href="https://github.com/dj3n3b44/Project_Buvette" target="_blank" class="project-link-button">💻 Cliquer pour voir le code</a>
       </div>
       
       <div class="project">
         <img src="docs/images/java_game.png" alt="Capture d'écran Jeu Java" width="370" height="208">
         <h3>Jeu 2D (JavaFX)</h3>
-        <p>Ce projet consistait à développer un jeu 2D intégrant un système d’animations, la détection des collisions, un inventaire interactif et une gestion centralisée des événements. L’ensemble reposait sur une architecture MVC afin de garantir une organisation claire du code.</p>
+        <p>Développement d'un jeu 2D intégrant animations, collisions, inventaire et gestion des événements.</p>
+        <p><i>Compétences mobilisées : Conduire un projet, Collaborer en équipe.</i></p>
+        <p><i>Posture réflexive :</i> Ce projet de groupe a été mon premier véritable test sur la gestion des conflits de code avec Git. J'ai appris qu'un bon code individuel ne suffit pas ; il faut communiquer sur l'architecture globale pour que les modules de chacun s'imbriquent sans erreur.</p>
         <a href="https://github.com/dj3n3b44/Project_2DGame" target="_blank" class="project-link-button">💻 Cliquer pour voir le code</a>
-      </div>
-      
-      <div class="project">
-        <img src="docs/images/projet_robot.jpg" alt="Capture d'écran Projet Embarqué" width="370" height="208">
-        <h3>Main robotique contrôlée par capteurs (Arduino)</h3>
-        <p>Réalisation d’un système embarqué permettant de contrôler une main robotique à l’aide de capteurs de flexion. Chaque capteur est relié à une carte Arduino. La flexion d’un doigt est lue en entrée analogique et traduite en mouvement du doigt correspondant.</p>
-        <a href="docs/projet/mainRobotique.pdf" download class="project-link-button">📄 Cliquer pour voir la présentation du projet</a>
-      </div>
-      
-      <div class="project">
-        <img src="docs/images/vm.png" alt="Capture d'écran Projet Réseau" width="370" height="208">
-        <h3>Installation de Services Réseau (LAMP)</h3>
-        <p>Ce projet consistait à créer et configurer une machine virtuelle Ubuntu, puis à installer et paramétrer la suite LAMP (Apache, MySQL, PHP). L'objectif était de déployer un environnement fonctionnel capable d'héberger un site web dynamique.</p>
-        <a href="https://www.canva.com/design/DAG6igfBygI/0RTGqXSI08VLag6Do96fbw/view" target="_blank" class="project-link-button">📄 Cliquer pour voir la présentation</a>
-      </div>
-      
-      <div class="project">
-        <img src="docs/images/web_project.png" alt="Site Web HTML CSS JS" width="370" height="208">
-        <h3>Site Web (HTML/CSS/JS)</h3>
-        <p>Ce projet consistait à concevoir et développer un mini-site dédié aux Jeux Olympiques, intégrant un design responsive et plusieurs sections dynamiques. L’objectif était de proposer une expérience interactive grâce à des animations JavaScript.</p>
-        <a href="https://saefinal-8ba1e.firebaseapp.com/" target="_blank" class="project-link-button">🌐 Cliquer pour voir le site</a>
       </div>
       
       <div class="project">
         <img src="docs/images/sql_project.png" alt="Capture d'écran Projet SQL" width="370" height="208">
         <h3>Base de Données (MySQL)</h3>
-        <p>Ce projet consistait à analyser les besoins d’un système d’information puis à concevoir une base de données complète. Il incluait la réalisation des modèles conceptuel et logique, ainsi que la création du schéma relationnel. L’objectif était d’aboutir à une structure optimisée.</p>
+        <p>Analyse des besoins d'un système d'information et conception d'une base de données optimisée (modèles conceptuel et logique).</p>
+        <p><i>Compétences mobilisées : Gérer des données.</i></p>
+        <p><i>Posture réflexive :</i> J'ai appris à ne pas me précipiter sur l'implémentation. La phase de modélisation théorique m'a permis de comprendre comment assurer l'intégrité des données à long terme avant d'écrire la moindre requête SQL.</p>
         <a href="docs/projet/projet_vente_velo.zip" download class="project-link-button">📦 Télécharger le projet (ZIP)</a>
       </div>
     </div>
   </section>
 
+  <!-- NOUVELLE SECTION : COMPÉTENCES RESTRUCTURÉES -->
   <section id="skills" class="hidden">
-    <h2>Compétences Techniques</h2>
+    <h2>Compétences du BUT Informatique</h2>
+    <p style="margin-bottom: 30px;">Cette section regroupe la maîtrise de mes outils techniques au sein des compétences théoriques du programme national, accompagnée d'une analyse distanciée de mon apprentissage.</p>
     
-    <h3>👩🏾‍💻 Langages</h3>
-    <div class="skills-logos">
-      <div class="skill-item"><img src="docs/images/java.png"><span>Java</span></div>
-      <div class="skill-item"><img src="docs/images/sql.png"><span>SQL</span></div>
-      <div class="skill-item"><img src="docs/images/html.png"><span>HTML</span></div>
-      <div class="skill-item"><img src="docs/images/css.png"><span>CSS</span></div>
-      <div class="skill-item"><img src="docs/images/php.png"><span>PHP</span></div>
-    </div>
+    <h3>1. Gérer des données de l'information</h3>
+    <p>Concevoir, optimiser et administrer des bases de données relationnelles pour répondre à un cahier des charges, tout en assurant la confidentialité et l'intégrité des données.</p>
+    <ul>
+      <li><i>Projets associés :</i> Gestion de Buvette Associative, Base de Données MySQL, Stage Amasco.</li>
+      <li><i>Outils maîtrisés :</i> SQL, MySQL, PHP, Google Apps Script.</li>
+    </ul>
+    <p><i>Bilan de la compétence :</i> J'ai dépassé le stade de la simple création de tables pour intégrer des notions d'optimisation et de sécurité. Mon stage m'a particulièrement sensibilisée au RGPD, m'apprenant que la gestion des données est autant une responsabilité éthique et légale qu'un défi technique.</p>
 
-    <h3>🖥️ Systèmes d'Exploitation</h3>
-    <div class="skills-logos">
-      <div class="skill-item"><img src="docs/images/ubuntu.png"><span>Ubuntu</span></div>
-      <div class="skill-item"><img src="docs/images/windows.png"><span>Windows</span></div>
-    </div>
+    <h3 style="margin-top: 30px;">2. Conduire un projet</h3>
+    <p>Identifier les besoins métiers, formaliser les attentes des clients et appliquer une démarche de suivi pour intégrer un projet dans le système d'information d'une organisation.</p>
+    <ul>
+      <li><i>Projets associés :</i> Stage Amasco, Jeu 2D Java, Déploiement LAMP.</li>
+      <li><i>Outils maîtrisés :</i> Méthodologies de suivi, Ubuntu, Modélisation MVC.</li>
+    </ul>
+    <p><i>Bilan de la compétence :</i> La conduite de projet m'a appris l'importance de l'adaptation. J'ai pu expérimenter le cycle de vie complet d'un logiciel, de l'expression du besoin à la mise en production. J'ai compris qu'un projet réussi est un projet qui répond réellement au besoin de l'utilisateur, et non pas seulement une prouesse technique isolée.</p>
 
-    <h3>🛠️ Outils</h3>
-    <div class="skills-logos">
-      <div class="skill-item"><img src="docs/images/github.png"><span>GitHub</span></div>
-      <div class="skill-item"><img src="docs/images/git.png"><span>Git</span></div>
-      <div class="skill-item"><img src="docs/images/intellij.png"><span>IntelliJ IDEA</span></div>
-      <div class="skill-item"><img src="docs/images/vscode.png"><span>VS Code</span></div>
-    </div>
+    <h3 style="margin-top: 30px;">3. Collaborer au sein d'une équipe informatique</h3>
+    <p>Comprendre la structure de l'informatique dans une organisation, mobiliser des compétences interpersonnelles et rendre compte de son activité.</p>
+    <ul>
+      <li><i>Projets associés :</i> Jeu 2D Java, Animation Telligo.</li>
+      <li><i>Outils maîtrisés :</i> Git, GitHub, IntelliJ, VS Code.</li>
+    </ul>
+    <p><i>Bilan de la compétence :</i> C'est ici que ma double casquette d'informaticienne et d'animatrice jeunesse (BAFA) prend tout son sens. L'organisation d'activités pour des jeunes m'a donné des réflexes de communication, de gestion des imprévus et d'écoute active qui sont cruciaux lors du développement collaboratif sur GitHub ou lors des réunions d'équipe.</p>
 
-    <h2>Compétences Personnelles</h2>
-    <div style="padding-left: 20px;">
-      <ul>
-        <li>✅ Rigueur, Autonomie et Organisation (qualités essentielles en gestion de projet).</li>
-        <li>🤝🏾 Esprit d'équipe et Adaptabilité (consolidés par l'expérience d'animatrice).</li>
-        <li>⏳ Professionnalisme : Patiente, sérieuse et Ponctuelle.</li>
-        <li>🗣️ Langues : Français (Langue maternelle) et Anglais (Niveau B2).</li>
-      </ul>
-    </div>
   </section>
 
   <section id="contact" class="hidden">
@@ -209,19 +239,18 @@
 
     function downloadCV() {
       const link = document.createElement("a");
-      link.href = "docs/CV_fr.pdf";  // Chemin du CV
-      link.download = "CV_DIALLO_Djeneba.pdf";   // Nom du fichier téléchargé
+      link.href = "docs/CV_fr.pdf";  
+      link.download = "CV_DIALLO_Djeneba.pdf";   
       link.click();
     }
-
 
     // Soumission SMTP EmailJS
     document.getElementById("contact-form").addEventListener("submit", function(event) {
       event.preventDefault();
 
       emailjs.sendForm(
-        "service_aofsma8",     // YOUR SMTP SERVICE ID
-        "template_gntcfms",    // YOUR TEMPLATE ID
+        "service_aofsma8",     
+        "template_gntcfms",    
         this
       ).then(
         function() {
@@ -235,11 +264,9 @@
         }
       );
     });
-        function allerVersProjetAmasco() {
-      // Affiche la section projets
+
+    function allerVersProjetAmasco() {
       showSection('projets');
-      
-      // Laisse un petit délai pour que la section s'affiche avant de scroller
       setTimeout(function() {
         document.getElementById('carte-stage-amasco').scrollIntoView({ behavior: 'smooth', block: 'start' });
       }, 150);
