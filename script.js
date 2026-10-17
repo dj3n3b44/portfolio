@@ -6,33 +6,53 @@ const messages = {
   en: { success: "✔️ Message sent successfully!", error: "❌ Error, please try again." }
 };
 
-emailjs.init({ publicKey: "tiZ7Bjr5dRrHuvgAz" });
+// Apparition des blocs au défilement
+const revealItems = document.querySelectorAll(".reveal");
+if ("IntersectionObserver" in window) {
+  const revealObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  revealItems.forEach(function(item) { revealObserver.observe(item); });
+} else {
+  revealItems.forEach(function(item) { item.classList.add("visible"); });
+}
 
-// Navigation
-function showSection(id) {
-  document.querySelectorAll("section").forEach(s => {
-    if (s.id !== "avatar-section") {
-      s.classList.add("hidden");
-    }
+// Met en surbrillance le lien du menu correspondant à la section affichée
+const navLinks = document.querySelectorAll(".nav-links a[href^='#']");
+if ("IntersectionObserver" in window) {
+  const sectionObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        navLinks.forEach(function(link) {
+          link.classList.toggle("active", link.getAttribute("href") === "#" + entry.target.id);
+        });
+      }
+    });
+  }, { rootMargin: "-40% 0px -55% 0px" });
+  document.querySelectorAll("main section[id]").forEach(function(section) {
+    sectionObserver.observe(section);
   });
-  document.getElementById(id).classList.remove("hidden");
 }
-
-// Affiche la section Projets puis défile jusqu'à la carte demandée
-function allerVersCarte(idCarte) {
-  showSection("projets");
-  setTimeout(function() {
-    document.getElementById(idCarte).scrollIntoView({ behavior: "smooth", block: "start" });
-  }, 150);
-}
-
-// Section "À propos" affichée par défaut
-showSection("intro");
 
 // Envoi du formulaire de contact via EmailJS
+if (window.emailjs) {
+  emailjs.init({ publicKey: "tiZ7Bjr5dRrHuvgAz" });
+}
+
 document.getElementById("contact-form").addEventListener("submit", function(event) {
   event.preventDefault();
   const status = document.getElementById("message-status");
+
+  if (!window.emailjs) {
+    status.textContent = messages[lang].error;
+    status.className = "status-error";
+    return;
+  }
 
   emailjs.sendForm("service_aofsma8", "template_gntcfms", this).then(
     function() {

@@ -2,71 +2,29 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Portfolio | Djeneba Diallo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+  <title>Portfolio | Djeneba Diallo</title>
+  <meta name="description" content="Portfolio de Djeneba Diallo, étudiante en 3e année de BUT Informatique (parcours données), à la recherche d'un stage de 14 à 16 semaines à partir du 8 mars 2027.">
 
-  <div id="lang-select" class="lang-select">
-    <p class="lang-title">Choisissez votre langue / Choose your language</p>
-    <div class="lang-buttons">
-      <button onclick="startTerminal('fr')">🇫🇷 Français</button>
-      <button onclick="startTerminal('en')">🇬🇧 English</button>
-    </div>
-  </div>
+  <!-- Aperçu lors d'un partage : LinkedIn lit cette page sans exécuter le JavaScript -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Djeneba Diallo – Portfolio">
+  <meta property="og:description" content="Étudiante en 3e année de BUT Informatique (données). Recherche un stage de 14 à 16 semaines à partir du 8 mars 2027.">
+  <meta property="og:image" content="https://dj3n3b44.github.io/portfolio/docs/images/avatar.png">
+  <meta property="og:url" content="https://dj3n3b44.github.io/portfolio/">
+  <meta property="og:locale" content="fr_FR">
 
-  <div id="terminal-init" class="hidden">
-    <pre id="terminal-text"></pre>
-  </div>
-  
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
   <script>
-    let selectedLang = "fr";
-
-    function startTerminal(lang) {
-      selectedLang = lang;
-      document.getElementById("lang-select").style.display = "none";
-      document.getElementById("terminal-init").classList.remove("hidden");
-      typeLine();
-    }
-
-    const lines = {
-      fr: [
-        "Initialisation du système...",
-        "Chargement des modules...",
-        "Connexion à l’interface...",
-        "Portfolio prêt."
-      ],
-      en: [
-        "System initialization...",
-        "Loading modules...",
-        "Connecting to interface...",
-        "Portfolio ready."
-      ]
-    };
-
-    let i = 0;
-    function typeLine() {
-      const terminal = document.getElementById("terminal-text");
-      const currentLines = lines[selectedLang];
-      if (i < currentLines.length) {
-        const line = document.createElement("div");
-        line.textContent = currentLines[i];
-        terminal.appendChild(line);
-        i++;
-        setTimeout(typeLine, 800);
-      } else {
-        setTimeout(() => {
-          // Redirection vers la page FR ou EN dédiée
-          if (selectedLang === "en") {
-            window.location.href = "en.html"; 
-          } else {
-            window.location.href = "fr.html"; 
-          }
-        }, 1000);
-      }
-    }
+    // Redirection immédiate vers la version FR ou EN selon la langue du navigateur
+    const langues = navigator.languages || [navigator.language || "fr"];
+    const francais = langues.some(function(l) { return l.toLowerCase().startsWith("fr"); });
+    window.location.replace(francais ? "fr.html" : "en.html");
   </script>
-
+  <noscript><meta http-equiv="refresh" content="0; url=fr.html"></noscript>
+</head>
+<body style="background: #0a0d14; color: #dce2f0; font-family: sans-serif; text-align: center; padding: 40px;">
+  <p><a href="fr.html" style="color: #58a6ff;">Version française</a> · <a href="en.html" style="color: #58a6ff;">English version</a></p>
 </body>
 </html>
