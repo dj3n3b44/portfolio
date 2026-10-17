@@ -2,288 +2,362 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Portfolio | Djeneba Diallo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio | Djeneba Diallo</title>
+  <meta name="description" content="Portfolio of Djeneba Diallo, third-year Computer Science student (BUT Informatique) looking for a 14 to 16-week internship starting March 8, 2027.">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <p class="lang-switch-link" style="text-align: center; margin: 10px 0;">
-    <a href="index.html">Changer de langue / Change Language</a>
+  <p class="lang-switch-link">
+    <a href="fr.html" hreflang="fr" lang="fr">Version française</a>
   </p>
 
   <section id="avatar-section">
-    <button id="cv-button" onclick="downloadCV()">📄 Download CV</button>
+    <a id="cv-button" href="docs/CV_en.pdf" download="CV_DIALLO_Djeneba_EN.pdf">📄 Download CV</a>
     <div class="avatar-container">
-      <img src="docs/images/avatar_.png" alt="Djeneba Diallo Avatar" width="180" height="270">
+      <img class="avatar" src="docs/images/avatar.jpg" alt="Photo of Djeneba Diallo" width="180" height="270">
       <div class="avatar-text">
         <h1>Djeneba Diallo</h1>
         <p>
-          3rd-year Computer Science student (BUT Informatique), specializing in Data Management and Exploitation. I am looking for a 12 to 16-week internship starting March 8, 2027, to apply my skills in software development and data modeling.
+          Third-year Computer Science student (BUT Informatique), specializing in Data Administration, Management and Exploitation. I am looking for a 14 to 16-week internship starting March 8, 2027.
         </p>
       </div>
     </div>
   </section>
 
   <nav>
-    <button onclick="showSection('intro')">> About</button>
-    <button onclick="showSection('projets')">> Projects</button>
-    <button onclick="showSection('matrice')">> Skills Matrix</button>
-    <button onclick="showSection('skills')">> Skills</button>
-    <button onclick="showSection('contact')">> Contact</button>
+    <button onclick="showSection('intro')">About</button>
+    <button onclick="showSection('projets')">Projects</button>
+    <button onclick="showSection('matrice')">Skills Matrix</button>
+    <button onclick="showSection('skills')">Skills</button>
+    <button onclick="showSection('contact')">Contact</button>
   </nav>
 
+  <!-- ABOUT: TIMELINE -->
   <section id="intro" class="hidden">
-    <h2>About Me</h2>
-    
-    <h3>📚 Education & Background</h3>
-    <ul>
-      <li>BUT Informatique (3rd year in progress, IUT de Montreuil) - Specialization: Data Administration, Management, and Exploitation.</li>
-      <li>STI2D Technological Baccalaureate (Information Systems and Digital Technology), graduated with High Honors.</li>
-    </ul>
+    <h2 class="section-title center">My Background</h2>
 
-    <h3>💼 Experience and Certifications</h3>
-    <ul>
-      <li>
-        <em>Internship - GDPR Project Manager (Les Ateliers Amasco)</em> : 8-week professional mission. Studied a media management IT solution and implemented a GDPR-compliant workflow. <br>
-        <a href="#" onclick="allerVersProjetAmasco(); return false;" style="color: #007BFF; text-decoration: underline;">See mission details ↓</a>
-      </li>
-      <li>PSC1 Certificate (Civic Prevention and Rescue Level 1): I am trained in first aid and able to respond in an emergency.</li>
-      <li>BAFA (Youth Leader Certificate) - Specialization: Welcoming children with disabilities.</li>
-      <li>Versatile youth leadership experience: I worked as a camp counselor, science animator, and educational animator.</li>
-    </ul>
+    <div class="timeline">
+      <div class="timeline-item">
+        <h3>BUT Informatique (Bachelor in Computer Science) <span class="timeline-meta">2024 – 2027 · in progress</span></h3>
+        <p><strong>IUT de Montreuil</strong> – Specialization: Data Administration, Management and Exploitation.</p>
+      </div>
+
+      <div class="timeline-item">
+        <h3>IT Activities Leader <span class="timeline-meta">July 2026</span></h3>
+        <p><strong>Telligo</strong> (Saint-Berthevin) – Designed and delivered programming workshops, and supported participants in building their IT projects.</p>
+        <a href="#" class="timeline-link" onclick="allerVersCarte('carte-anim-telligo'); return false;">&gt; See the experience</a>
+      </div>
+
+      <div class="timeline-item">
+        <h3>Internship – GDPR Project Manager <span class="timeline-meta">April – June 2026 · 8 weeks</span></h3>
+        <p><strong>Les Ateliers Amasco</strong> (Montrouge) – Studied a media management IT solution, implemented a GDPR-compliant workflow and developed a web application (Google Apps Script).</p>
+        <a href="#" class="timeline-link" onclick="allerVersCarte('carte-stage-amasco'); return false;">&gt; See mission details</a>
+      </div>
+
+      <div class="timeline-item">
+        <h3>BAFA &amp; PSC1 <span class="timeline-meta">BAFA: 2023 – 2024</span></h3>
+        <p><strong>IFAC / Cémea</strong> – BAFA (French youth leader certificate) with a specialization in welcoming children with disabilities. Varied youth leadership experience (camp counselor, science animator, educational animator): supervising groups aged 6 to 17 and handling unexpected situations. PSC1 certified (first aid, level 1).</p>
+      </div>
+
+      <div class="timeline-item">
+        <h3>STI2D Technological Baccalaureate <span class="timeline-meta">2022 – 2024</span></h3>
+        <p><strong>Lycée Voillaume</strong> (Aulnay-sous-Bois) – Information Systems and Digital Technology option, graduated with highest honors.</p>
+      </div>
+    </div>
   </section>
 
+  <!-- PROJECTS -->
+  <section id="projets" class="hidden">
+    <h2 class="section-title">Professional Experience</h2>
+
+    <div class="project-grid">
+
+      <article class="project-card" id="carte-stage-amasco">
+        <img src="docs/images/soutenance_amasco.png" alt="Internship presentation at Les Ateliers Amasco">
+        <div class="project-body">
+          <h3>Amasco Internship: Media Flow &amp; GDPR</h3>
+          <div class="badges">
+            <span class="badge"><img src="docs/images/html.png" alt=""> HTML/CSS</span>
+            <span class="badge">Google Apps Script</span>
+          </div>
+          <p class="project-desc">Development of a web application and a Google Apps Script backend: moderation dashboard and automatic image rights assignment algorithm.</p>
+          <details class="analysis">
+            <summary>&gt; Analysis &amp; BUT skills</summary>
+            <div class="analysis-body">
+              <p><strong>Skills:</strong> Develop applications, Manage information data, Lead a project.</p>
+              <p>This project confronted me with real legal compliance issues. Translating GDPR rules into code taught me to think of a project first in terms of business needs and security, before technology.</p>
+            </div>
+          </details>
+          <div class="project-actions">
+            <a class="btn btn-primary" href="docs/projet/Soutenance_Stage_Diallo.pdf" target="_blank">📊 View the presentation</a>
+            <a class="link-secondary" href="docs/projet/Rapport_Stage_Diallo.pdf" target="_blank">Read the report (PDF, in French)</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card" id="carte-anim-telligo">
+        <img src="docs/images/anim_info.png" alt="IT workshop at Telligo">
+        <div class="project-body">
+          <h3>IT Activities Leader (Telligo)</h3>
+          <div class="badges">
+            <span class="badge">Teaching</span>
+            <span class="badge">IT Outreach</span>
+          </div>
+          <p class="project-desc">Design and facilitation of introductory programming workshops. Creation of adaptable mini-projects (software and web).</p>
+          <details class="analysis">
+            <summary>&gt; Analysis &amp; BUT skills</summary>
+            <div class="analysis-body">
+              <p><strong>Skills:</strong> Work in an IT team.</p>
+              <p>Passing on concepts to young people forced me to simplify my explanations. This experience built my communication skills, a major asset for agile teamwork.</p>
+            </div>
+          </details>
+        </div>
+      </article>
+
+    </div>
+
+    <h2 class="section-title">Academic Projects</h2>
+
+    <div class="project-grid">
+
+      <article class="project-card">
+        <img src="docs/images/buvette_project.png" alt="Screenshot of the student association snack bar project">
+        <div class="project-body">
+          <h3>Student Association Snack Bar (MVC)</h3>
+          <div class="badges">
+            <span class="badge"><img src="docs/images/php.png" alt=""> PHP</span>
+            <span class="badge"><img src="docs/images/sql.png" alt=""> SQL</span>
+          </div>
+          <p class="project-desc">PHP/SQL web application (MVC architecture) to manage inventory and sales in real time.</p>
+          <details class="analysis">
+            <summary>&gt; Analysis &amp; BUT skills</summary>
+            <div class="analysis-body">
+              <p><strong>Skills:</strong> Develop applications, Manage information data, Lead a project.</p>
+              <p>I realized the importance of separating business logic from display using MVC. I also learned that a poorly modeled database makes evolution complex, which now guides how I code.</p>
+            </div>
+          </details>
+          <a class="btn btn-github" href="https://github.com/dj3n3b44/Project_Buvette" target="_blank">💻 View the code on GitHub</a>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <img src="docs/images/java_game.png" alt="Screenshot of the JavaFX 2D game">
+        <div class="project-body">
+          <h3>2D Game (JavaFX)</h3>
+          <div class="badges">
+            <span class="badge"><img src="docs/images/java.png" alt=""> Java</span>
+            <span class="badge"><img src="docs/images/git.png" alt=""> Git</span>
+          </div>
+          <p class="project-desc">Development of a 2D game integrating animations, collision detection and an interactive inventory.</p>
+          <details class="analysis">
+            <summary>&gt; Analysis &amp; BUT skills</summary>
+            <div class="analysis-body">
+              <p><strong>Skills:</strong> Develop applications, Lead a project, Work in an IT team.</p>
+              <p>This was my first real test managing Git conflicts in a group. I understood that good individual code isn't enough: agreeing on the overall architecture before coding is necessary.</p>
+            </div>
+          </details>
+          <a class="btn btn-github" href="https://github.com/dj3n3b44/Project_2DGame" target="_blank">💻 View the code on GitHub</a>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <img src="docs/images/sql_project.png" alt="Screenshot of the MySQL modeling project">
+        <div class="project-body">
+          <h3>Database Modeling (MySQL)</h3>
+          <div class="badges">
+            <span class="badge"><img src="docs/images/sql.png" alt=""> MySQL</span>
+          </div>
+          <p class="project-desc">Analysis of an information system and creation of an optimized relational database (conceptual and logical data models).</p>
+          <details class="analysis">
+            <summary>&gt; Analysis &amp; BUT skills</summary>
+            <div class="analysis-body">
+              <p><strong>Skills:</strong> Manage information data.</p>
+              <p>Crucial lesson: never rush into coding. Ensuring theoretical data integrity prevents future flaws.</p>
+            </div>
+          </details>
+          <a class="btn btn-secondary" href="docs/projet/projet_vente_velo.zip" download>📦 Download the project (ZIP)</a>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <img src="docs/images/vm.png" alt="Screenshot of the LAMP server project">
+        <div class="project-body">
+          <h3>Network Server (LAMP)</h3>
+          <div class="badges">
+            <span class="badge"><img src="docs/images/ubuntu.png" alt=""> Ubuntu</span>
+            <span class="badge">Apache / MySQL / PHP</span>
+          </div>
+          <p class="project-desc">Creation of an Ubuntu virtual machine and deployment of a secure Apache/MySQL/PHP environment.</p>
+          <a class="btn btn-secondary" href="https://www.canva.com/design/DAG6igfBygI/0RTGqXSI08VLag6Do96fbw/view" target="_blank">📄 View the presentation</a>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <img src="docs/images/web_project.png" alt="Screenshot of the Olympic Games website">
+        <div class="project-body">
+          <h3>Olympic Games Website</h3>
+          <div class="badges">
+            <span class="badge"><img src="docs/images/html.png" alt=""> HTML/CSS</span>
+            <span class="badge">JavaScript</span>
+          </div>
+          <p class="project-desc">Dynamic and responsive mini-site dedicated to the Olympic Games, with JavaScript animations.</p>
+          <a class="btn btn-secondary" href="https://saefinal-8ba1e.firebaseapp.com/" target="_blank">🌐 View the website</a>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <img src="docs/images/projet_robot.jpg" alt="Photo of the robotic hand">
+        <div class="project-body">
+          <h3>Robotic Hand (Arduino)</h3>
+          <div class="badges">
+            <span class="badge">Arduino</span>
+            <span class="badge">Embedded Systems</span>
+          </div>
+          <p class="project-desc">Embedded system controlling a robotic hand using analog flex sensors.</p>
+          <a class="btn btn-secondary" href="docs/projet/mainRobotique.pdf" target="_blank">📄 View the presentation</a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- SKILLS MATRIX -->
   <section id="matrice" class="hidden">
-    <h2>Cross-Reference Table: Projects & Skills</h2>
-    <p>This matrix illustrates the dual reading of my portfolio, linking my achievements to the national curriculum skills.</p>
-    
-    <div style="overflow-x: auto; margin-top: 20px;">
-      <table border="1" style="width:100%; border-collapse: collapse; text-align:center;">
+    <h2 class="section-title">Cross-Reference Table: Projects &amp; Skills</h2>
+    <p>This matrix links my projects to the BUT Informatique skills, offering a dual reading of my portfolio.</p>
+
+    <div class="table-wrapper">
+      <table class="matrix">
         <tr>
-          <th style="padding: 10px; text-align:left;">Projects \ Skills</th>
-          <th style="padding: 10px;">Manage Data</th>
-          <th style="padding: 10px;">Manage a Project</th>
-          <th style="padding: 10px;">Collaborate in a Team</th>
+          <th>Projects \ Skills</th>
+          <th title="Develop applications">Develop</th>
+          <th title="Administer complex communicating IT systems">Administer</th>
+          <th title="Manage information data">Manage data</th>
+          <th title="Lead a project">Lead a project</th>
+          <th title="Work in an IT team">Teamwork</th>
         </tr>
         <tr>
-          <td style="padding: 10px; text-align:left;">Internship: Media Flow & GDPR</td>
-          <td>X</td>
-          <td>X</td>
-          <td></td>
+          <td>Amasco Internship: Media Flow &amp; GDPR</td>
+          <td>✔️</td><td></td><td>✔️</td><td>✔️</td><td></td>
         </tr>
         <tr>
-          <td style="padding: 10px; text-align:left;">Associative Snack Bar Management</td>
-          <td>X</td>
-          <td>X</td>
-          <td></td>
+          <td>IT Activities Leader (Telligo)</td>
+          <td></td><td></td><td></td><td></td><td>✔️</td>
         </tr>
         <tr>
-          <td style="padding: 10px; text-align:left;">2D Game (JavaFX)</td>
-          <td></td>
-          <td>X</td>
-          <td>X</td>
+          <td>Student Association Snack Bar (MVC)</td>
+          <td>✔️</td><td></td><td>✔️</td><td>✔️</td><td></td>
         </tr>
         <tr>
-          <td style="padding: 10px; text-align:left;">IT Animator (Telligo)</td>
-          <td></td>
-          <td></td>
-          <td>X</td>
+          <td>2D Game (JavaFX)</td>
+          <td>✔️</td><td></td><td></td><td>✔️</td><td>✔️</td>
         </tr>
         <tr>
-          <td style="padding: 10px; text-align:left;">Database Modeling (MySQL)</td>
-          <td>X</td>
-          <td></td>
-          <td></td>
+          <td>Database Modeling (MySQL)</td>
+          <td></td><td></td><td>✔️</td><td></td><td></td>
         </tr>
         <tr>
-          <td style="padding: 10px; text-align:left;">Network Services Setup (LAMP)</td>
-          <td></td>
-          <td>X</td>
-          <td></td>
+          <td>Network Server (LAMP)</td>
+          <td></td><td>✔️</td><td></td><td></td><td></td>
+        </tr>
+        <tr>
+          <td>Olympic Games Website</td>
+          <td>✔️</td><td></td><td></td><td></td><td></td>
         </tr>
       </table>
     </div>
   </section>
 
-  <section id="projets" class="hidden">
-    <h2>My Professional Experience</h2>
-    <div class="project-row">
-      <div class="project" id="carte-stage-amasco">
-        <img src="docs/images/soutenance_amasco.png" alt="Internship Presentation Les Ateliers Amasco" width="370" height="208">
-        <h3>Internship: Media Flow & GDPR</h3>
-        <p>Development of a web application and a Google Apps Script backend. Moderation dashboard and automatic image rights assignment algorithm.</p>
-        
-        <details style="margin-bottom: 15px; cursor: pointer;">
-          <summary><i>> Applied Skills & Reflection</i></summary>
-          <div style="padding-top: 10px; font-size: 0.9em;">
-            <p><u>Skills</u>: Manage a project, Manage data.</p>
-            <p><u>Reflection</u>: This project confronted me with real legal compliance issues. Translating GDPR rules into code taught me to think of a project first by business needs and security, before focusing on technology.</p>
-          </div>
-        </details>
-
-        <a href="docs/projet/Soutenance_Stage_Diallo.pdf" target="_blank" class="project-link-button">📊 Discover my presentation</a>
-        <div style="margin-top: 10px; text-align: center;">
-          <a href="docs/projet/Rapport_Stage_Diallo.pdf" target="_blank" style="font-size: 0.85em;">📖 Or read the full report (PDF)</a>
-        </div>
-      </div>
-
-      <div class="project" id="carte-anim-telligo">
-        <img src="docs/images/anim_info.png" alt="IT Animation Telligo" width="370" height="208">
-        <h3>IT Animator (Telligo)</h3>
-        <p>Design and facilitation of introductory IT workshops for young people. Creation of adaptable mini-projects.</p>
-        
-        <details style="margin-bottom: 15px; cursor: pointer;">
-          <summary><i>> Applied Skills & Reflection</i></summary>
-          <div style="padding-top: 10px; font-size: 0.9em;">
-            <p><u>Skills</u>: Collaborate within a team.</p>
-            <p><u>Reflection</u>: Passing on concepts to young people forced me to simplify my explanations. This experience built my communication skills, a major asset for agile teamwork.</p>
-          </div>
-        </details>
-      </div>
-    </div>
-
-    <h2 style="margin-top: 40px;">My School Projects</h2>
-    <div class="project-row">
-      <div class="project">
-        <img src="docs/images/buvette_project.png" alt="Snack Bar Project Screenshot" width="370" height="208">
-        <h3>Associative Snack Bar Management</h3>
-        <p>Development of a PHP/SQL web application (MVC architecture) to manage inventory and real-time sales.</p>
-        
-        <details style="margin-bottom: 15px; cursor: pointer;">
-          <summary><i>> Applied Skills & Reflection</i></summary>
-          <div style="padding-top: 10px; font-size: 0.9em;">
-            <p><u>Skills</u>: Manage data, Manage a project.</p>
-            <p><u>Reflection</u>: I realized the importance of separating business logic from display using MVC. I also learned that a poorly modeled database makes evolution complex, which now guides how I code.</p>
-          </div>
-        </details>
-
-        <a href="https://github.com/dj3n3b44/Project_Buvette" target="_blank" class="project-link-button">💻 Click to view code</a>
-      </div>
-      
-      <div class="project">
-        <img src="docs/images/java_game.png" alt="Java Game Screenshot" width="370" height="208">
-        <h3>2D Game (JavaFX)</h3>
-        <p>Development of a 2D game integrating animations, collision detection, and an interactive inventory.</p>
-        
-        <details style="margin-bottom: 15px; cursor: pointer;">
-          <summary><i>> Applied Skills & Reflection</i></summary>
-          <div style="padding-top: 10px; font-size: 0.9em;">
-            <p><u>Skills</u>: Manage a project, Collaborate in a team.</p>
-            <p><u>Reflection</u>: This was my first real test managing Git conflicts in a group. I understood that good individual code isn't enough; agreeing on the overall architecture is necessary.</p>
-          </div>
-        </details>
-
-        <a href="https://github.com/dj3n3b44/Project_2DGame" target="_blank" class="project-link-button">💻 Click to view code</a>
-      </div>
-      
-      <div class="project">
-        <img src="docs/images/projet_robot.jpg" alt="Embedded Project Screenshot" width="370" height="208">
-        <h3>Robotic Hand (Arduino)</h3>
-        <p>Embedded system controlling a robotic hand using analog flex sensors.</p>
-        <a href="docs/projet/mainRobotique.pdf" download class="project-link-button">📄 Click to view presentation</a>
-      </div>
-      
-      <div class="project">
-        <img src="docs/images/vm.png" alt="Network Project Screenshot" width="370" height="208">
-        <h3>Network Server (LAMP)</h3>
-        <p>Creation of an Ubuntu VM and deployment of a secure Apache/MySQL/PHP environment.</p>
-        <a href="https://www.canva.com/design/DAG6igfBygI/0RTGqXSI08VLag6Do96fbw/view" target="_blank" class="project-link-button">📄 Click to view presentation</a>
-      </div>
-      
-      <div class="project">
-        <img src="docs/images/web_project.png" alt="HTML CSS JS Website" width="370" height="208">
-        <h3>Olympics Website (HTML/CSS/JS)</h3>
-        <p>Dynamic and responsive mini-site dedicated to the Olympic Games with JavaScript animations.</p>
-        <a href="https://saefinal-8ba1e.firebaseapp.com/" target="_blank" class="project-link-button">🌐 Click to view website</a>
-      </div>
-      
-      <div class="project">
-        <img src="docs/images/sql_project.png" alt="SQL Project Screenshot" width="370" height="208">
-        <h3>Database Modeling (MySQL)</h3>
-        <p>Analysis of an information system and creation of an optimized relational database from scratch.</p>
-        
-        <details style="margin-bottom: 15px; cursor: pointer;">
-          <summary><i>> Applied Skills & Reflection</i></summary>
-          <div style="padding-top: 10px; font-size: 0.9em;">
-            <p><u>Skills</u>: Manage data.</p>
-            <p><u>Reflection</u>: Crucial lesson: never rush into coding. Ensuring theoretical data integrity prevents future flaws.</p>
-          </div>
-        </details>
-
-        <a href="docs/projet/projet_vente_velo.zip" download class="project-link-button">📦 Download project (ZIP)</a>
-      </div>
-    </div>
-  </section>
-
+  <!-- SKILLS -->
   <section id="skills" class="hidden">
-    
-    <h2>Academic Skills (BUT)</h2>
-    <ul>
+
+    <h2 class="section-title">BUT Skills</h2>
+    <ul class="competences">
       <li>
-        <strong style="color: #007BFF;">Manage Information Data</strong><br>
-        <span style="font-size: 0.9em;"><i>Related Projects:</i> Associative Snack Bar, MySQL Database, Amasco Internship.</span><br>
-        <span style="font-size: 0.9em;"><i>Tools used:</i> SQL, PHP, Google Apps Script.</span>
+        <strong>Develop applications</strong>
+        <span class="competence-detail"><i>Related projects:</i> Amasco Internship, Student Association Snack Bar, 2D Game, Olympic Games Website.</span>
+        <span class="competence-detail"><i>Tools used:</i> Java/JavaFX, PHP, HTML/CSS/JavaScript, Google Apps Script, MVC architecture.</span>
       </li>
-      <li style="margin-top: 10px;">
-        <strong style="color: #007BFF;">Manage a Project</strong><br>
-        <span style="font-size: 0.9em;"><i>Related Projects:</i> Amasco Internship, 2D Java Game, LAMP Server.</span><br>
-        <span style="font-size: 0.9em;"><i>Tools used:</i> Agile Methodology, MVC, Ubuntu.</span>
+      <li>
+        <strong>Administer complex communicating IT systems</strong>
+        <span class="competence-detail"><i>Related projects:</i> Network Server (LAMP).</span>
+        <span class="competence-detail"><i>Tools used:</i> Ubuntu, Apache, MySQL, virtual machines.</span>
       </li>
-      <li style="margin-top: 10px;">
-        <strong style="color: #007BFF;">Collaborate within a team</strong><br>
-        <span style="font-size: 0.9em;"><i>Related Projects:</i> 2D Java Game, Telligo Animation.</span><br>
-        <span style="font-size: 0.9em;"><i>Tools used:</i> Git, GitHub, IDEs.</span>
+      <li>
+        <strong>Manage information data</strong>
+        <span class="competence-detail"><i>Related projects:</i> Amasco Internship, Student Association Snack Bar, Database Modeling.</span>
+        <span class="competence-detail"><i>Tools used:</i> SQL/MySQL, data modeling, Google Apps Script.</span>
+      </li>
+      <li>
+        <strong>Lead a project</strong>
+        <span class="competence-detail"><i>Related projects:</i> Amasco Internship, Student Association Snack Bar, 2D Game.</span>
+        <span class="competence-detail"><i>Tools used:</i> needs analysis, MVC architecture, Git/GitHub.</span>
+      </li>
+      <li>
+        <strong>Work in an IT team</strong>
+        <span class="competence-detail"><i>Related projects:</i> 2D Game, IT Activities Leader (Telligo).</span>
+        <span class="competence-detail"><i>Tools used:</i> Git, GitHub, communication and outreach.</span>
       </li>
     </ul>
 
-    <h2 style="margin-top: 40px;">Technical Skills</h2>
-    
+    <h2 class="section-title">Technical Skills</h2>
+
     <h3>👩🏾‍💻 Languages</h3>
     <div class="skills-logos">
-      <div class="skill-item"><img src="docs/images/java.png" alt="Java"><span>Java</span></div>
-      <div class="skill-item"><img src="docs/images/sql.png" alt="SQL"><span>SQL</span></div>
-      <div class="skill-item"><img src="docs/images/html.png" alt="HTML"><span>HTML</span></div>
-      <div class="skill-item"><img src="docs/images/css.png" alt="CSS"><span>CSS</span></div>
-      <div class="skill-item"><img src="docs/images/php.png" alt="PHP"><span>PHP</span></div>
+      <div class="skill-item"><img src="docs/images/java.png" alt=""><span>Java</span></div>
+      <div class="skill-item"><img src="docs/images/sql.png" alt=""><span>SQL</span></div>
+      <div class="skill-item"><img src="docs/images/html.png" alt=""><span>HTML</span></div>
+      <div class="skill-item"><img src="docs/images/css.png" alt=""><span>CSS</span></div>
+      <div class="skill-item"><img src="docs/images/php.png" alt=""><span>PHP</span></div>
+    </div>
+    <div class="badges skills-extra">
+      <span class="badge">JavaFX</span>
+      <span class="badge">JavaScript</span>
+      <span class="badge">Python</span>
+      <span class="badge">C</span>
+      <span class="badge">Google Apps Script</span>
     </div>
 
     <h3>🖥️ Operating Systems</h3>
     <div class="skills-logos">
-      <div class="skill-item"><img src="docs/images/ubuntu.png" alt="Ubuntu"><span>Ubuntu</span></div>
-      <div class="skill-item"><img src="docs/images/windows.png" alt="Windows"><span>Windows</span></div>
+      <div class="skill-item"><img src="docs/images/ubuntu.png" alt=""><span>Ubuntu</span></div>
+      <div class="skill-item"><img src="docs/images/windows.png" alt=""><span>Windows</span></div>
     </div>
 
     <h3>🛠️ Tools</h3>
     <div class="skills-logos">
-      <div class="skill-item"><img src="docs/images/github.png" alt="GitHub"><span>GitHub</span></div>
-      <div class="skill-item"><img src="docs/images/git.png" alt="Git"><span>Git</span></div>
-      <div class="skill-item"><img src="docs/images/intellij.png" alt="IntelliJ"><span>IntelliJ IDEA</span></div>
-      <div class="skill-item"><img src="docs/images/vscode.png" alt="VS Code"><span>VS Code</span></div>
+      <div class="skill-item"><img src="docs/images/github.png" alt=""><span>GitHub</span></div>
+      <div class="skill-item"><img src="docs/images/git.png" alt=""><span>Git</span></div>
+      <div class="skill-item"><img src="docs/images/intellij.png" alt=""><span>IntelliJ IDEA</span></div>
+      <div class="skill-item"><img src="docs/images/vscode.png" alt=""><span>VS Code</span></div>
+    </div>
+    <div class="badges skills-extra">
+      <span class="badge">Qlik</span>
     </div>
 
-    <h2>Personal Skills (Soft Skills)</h2>
-    <div style="padding-left: 20px;">
-      <ul>
-        <li>✅ Rigour, Autonomy, and Organization (essential qualities in project management).</li>
-        <li>🤝🏾 Teamwork and Adaptability (consolidated by experience as a youth counselor).</li>
-        <li>⏳ Professionalism: Patient, serious, and Punctual.</li>
-        <li>🗣️ Languages: French (Native Language) and English (B2 Level).</li>
-      </ul>
-    </div>
+    <h2 class="section-title">Personal Skills</h2>
+    <ul>
+      <li>✅ Rigor, autonomy and organization (essential qualities in project management).</li>
+      <li>🤝🏾 Teamwork and adaptability (strengthened by my experience as a youth leader).</li>
+      <li>⏳ Professionalism: patient, serious and punctual.</li>
+      <li>🗣️ Languages: French (native) and English (B2).</li>
+    </ul>
   </section>
 
+  <!-- CONTACT -->
   <section id="contact" class="hidden">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:djenebadiallo06@icloud.com">djenebadiallo06@icloud.com</a></p>
+    <h2>Contact Me</h2>
+    <p>Email: <a href="mailto:djenebadiallocontact@gmail.com">djenebadiallocontact@gmail.com</a></p>
     <p>GitHub: <a href="https://github.com/dj3n3b44" target="_blank">dj3n3b44</a></p>
     <p>Phone: +33 7 67 41 91 70</p>
 
     <h3>📬 Send me a message</h3>
 
     <form id="contact-form">
-      <input type="text" name="from_name" placeholder="Your Name" required>
-      <input type="email" name="from_email" placeholder="Your Email" required>
+      <input type="text" name="from_name" placeholder="Your name" required>
+      <input type="email" name="from_email" placeholder="Your email" required>
       <input type="text" name="subject" placeholder="Subject" required>
       <textarea name="message" placeholder="Your message" rows="5" required></textarea>
       <button type="submit">Send</button>
@@ -295,66 +369,12 @@
   <footer>
     <p>© 2026 Djeneba Diallo | BUT Informatique</p>
     <p>
-        GitHub: <a href="https://github.com/dj3n3b44" target="_blank">dj3n3b44</a> | Email: <a href="mailto:djenebadiallo06@icloud.com">djenebadiallo06@icloud.com</a>
+      GitHub: <a href="https://github.com/dj3n3b44" target="_blank">dj3n3b44</a> | Email: <a href="mailto:djenebadiallocontact@gmail.com">djenebadiallocontact@gmail.com</a>
     </p>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
-  <script>
-    (function(){
-      emailjs.init("tiZ7Bjr5dRrHuvgAz");
-    })();
-  </script>
-
-  <script>
-    // Navigation
-    function showSection(id) {
-      document.querySelectorAll('section').forEach(s => {
-        if (s.id !== "avatar-section") {
-          s.classList.add('hidden');
-        }
-      });
-      document.getElementById(id).classList.remove('hidden');
-    }
-
-    // Show "About" section by default
-    showSection('intro');
-
-    function downloadCV() {
-      const link = document.createElement("a");
-      link.href = "docs/CV_en.pdf";  
-      link.download = "CV_DIALLO_Djeneba_EN.pdf";   
-      link.click();
-    }
-
-    // SMTP Submission EmailJS
-    document.getElementById("contact-form").addEventListener("submit", function(event) {
-      event.preventDefault();
-
-      emailjs.sendForm(
-        "service_aofsma8",     
-        "template_gntcfms",    
-        this
-      ).then(
-        function() {
-          document.getElementById("message-status").innerHTML =
-            "✔️ Message sent successfully!";
-        },
-        function(error) {
-          document.getElementById("message-status").innerHTML =
-            "❌ Error, please try again.";
-          console.error(error);
-        }
-      );
-    });
-
-    function allerVersProjetAmasco() {
-      showSection('projets');
-      setTimeout(function() {
-        document.getElementById('carte-stage-amasco').scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }, 150);
-    }
-  </script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4.4.1/dist/email.min.js"></script>
+  <script src="script.js"></script>
 
 </body>
 </html>
