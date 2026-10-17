@@ -308,6 +308,15 @@ section {
   height: 200px;
   object-fit: cover;
 }
+/* Bandeau affiché à la place d'une capture quand le projet n'en a pas */
+.project-banner {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 64px;
+  background: linear-gradient(135deg, rgba(88, 166, 255, 0.25), rgba(88, 166, 255, 0.03));
+}
 .project-body {
   padding: 20px;
   flex-grow: 1;
